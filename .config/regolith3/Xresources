@@ -1,0 +1,14 @@
+regolith.wallpaper.file: /home/yoyomanzoor/Documents/nordic-wallpapers/wallpapers/chicago.jpg
+gnome.terminal.background-transparency-percent:	15
+gnome.terminal.use-transparent-background: true
+
+wm.gaps.inner.size: 30
+detect-client-opacity: true
+opacity-rule = [
+  "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+];
+#exec_always --no-startup-id flashfocus
+exec_always --no-startup-id $HOME/polybar-collection/launch.sh
+wm.bar.mode: invisible 
+!regolith.look.path: /usr/share/regolith-look/gruvbox
+regolith.look.path: /usr/share/regolith-look/lascaille
