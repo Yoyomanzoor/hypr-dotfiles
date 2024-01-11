@@ -201,6 +201,7 @@ export const ModuleSystem = () => Widget.EventBox({
                         className: 'spacing-h-5', children: [
                             BarGroup({ child: Utilities() }),
                             BarGroup({ child: BarBattery() }),
+                            BarGroup({ child: BarResource('CPU usage', 'developer_board', `mpstat | awk '/all/ {print($4 + $11)}'`), }),
                             BarGroup({ child: BarResource('RAM usage', 'memory', `free | awk '/^Mem/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),
                             BarGroup({ child: BarResource('Swap usage', 'swap_horiz', `free | awk '/^Swap/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),
                         ]
