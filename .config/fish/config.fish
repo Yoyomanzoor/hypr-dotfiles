@@ -121,6 +121,7 @@ function backup --argument filename
    cp $filename $filename.bak
 end
 
+alias conda 'micromamba'
 
 starship init fish | source
 
@@ -128,3 +129,10 @@ starship init fish | source
 #   set_color cyan; echo (pwd) 
 #   set_color green; echo '> '
 # end
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+set -gx MAMBA_EXE "/usr/bin/micromamba"
+set -gx MAMBA_ROOT_PREFIX "/home/yoyomanzoor/micromamba"
+$MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
+# <<< mamba initialize <<<
