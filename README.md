@@ -1,3 +1,20 @@
+## TODO
+
+- Replace the waifu thing with a prayer time widget
+- Prayer times in top bar
+- Remake the Quran thing from KDE setup to sidebar
+- Update color changing script to include other tools, like `alacritty`, 
+
+## Setup
+
+[OG](https://github.com/end-4/dots-hyprland/tree/illogical-impulse)
+
+- Arch running hypr
+- Terminal: foot, alacritty, kitty
+- Shell: fish + starship
+- IDE: nvim, vscode, rstudio
+- dmenu: ags, anyrun, ags
+
 ## Backing up dotfiles
 
 From [this link](https://www.atlassian.com/git/tutorials/dotfiles).
