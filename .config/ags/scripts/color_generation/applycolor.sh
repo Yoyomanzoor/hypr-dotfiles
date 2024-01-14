@@ -99,6 +99,20 @@ apply_foot() {
     cp "$HOME/.config/foot/foot_new.ini" "$HOME/.config/foot/foot.ini"
 }
 
+apply_alacritty() {
+    # check if scripts/templates/alacritty/alacritty.yml exists
+    if [ ! -f "scripts/templates/alacritty/alacritty.toml" ]; then
+        echo "Template file not found for Alacritty. Skipping that."
+        return
+    fi
+    # Copy template
+    cp "scripts/templates/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+    # Apply colors
+    for i in "${!colorlist[@]}"; do
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/alacritty/alacritty.toml" # note: ff because theyre opaque
+    done
+}
+
 apply_hyprland() {
     # Check if scripts/templates/hypr/colors.conf exists
     if [ ! -f "scripts/templates/hypr/colors.conf" ]; then
@@ -153,4 +167,5 @@ apply_hyprland &
 apply_gtk &
 apply_gtklock &
 apply_fuzzel &
-apply_foot
+apply_foot &
+apply_alacritty

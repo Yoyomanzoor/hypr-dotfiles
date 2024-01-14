@@ -1,0 +1,54 @@
+[cursor]
+style = "Beam"
+
+[window]
+dynamic_padding = true
+opacity = 0.9
+#blur = true
+
+[window.padding]
+x = 6
+y = 6
+
+
+# Default colors
+[colors.primary]
+background = '#$background #'
+foreground = '#$onBackground #'
+
+dim_foreground = '#$onBackground #'
+bright_foreground = '#$onBackground #'
+
+# Normal colors
+[colors.normal]
+black = '#$background #'
+red = '#$error #'
+green = '#$inversePrimary #'
+yellow = '#$onPrimaryContainer #'
+blue = '#$onPrimaryContainer #'
+magenta = '#$onSecondaryContainer #'
+cyan = '#$primary #'
+white = '#$onSurfaceVariant #'
+
+# Bright colors
+[colors.bright]
+black = '#$background #'
+red = '#$error #'
+green = '#$inversePrimary #'
+yellow = '#$onPrimaryContainer #'
+blue = '#$onPrimaryContainer #'
+magenta = '#$onSecondaryContainer #'
+cyan = '#$primary #'
+white = '#$onSurfaceVariant #'
+
+# Dim colors
+[colors.dim]
+black = '#$background #'
+red = '#$error #'
+green = '#$inversePrimary #'
+yellow = '#$onPrimaryContainer #'
+blue = '#$onPrimaryContainer #'
+magenta = '#$onSecondaryContainer #'
+cyan = '#$primary #'
+white = '#$onSurfaceVariant #'
+
