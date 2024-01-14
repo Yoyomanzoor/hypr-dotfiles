@@ -70,31 +70,31 @@ def athan(r):
     data = json.load(open(filename, encoding='utf-8'))
     data_today = data['data'][datetime.datetime.now().day-1]
 
-    convert_from = "%H:%M"
-    wanted_time_format = "%I:%M %p"
-    timings = {k:v.split(' ')[0] for k,v in data_today['timings'].items()}
-    del timings['Sunset']
-    del timings['Imsak']
-    del timings['Midnight']
-    del timings['Firstthird']
-    del timings['Lastthird']
-    current_time = datetime.datetime.now().time()
-
-    for name, time in timings.items():
-        datetimed = datetime.datetime.strptime(timings[name], convert_from).time()
-
-        if current_time < datetimed:
-            next_prayer = [name, convert_time(time, convert_from, wanted_time_format)]
-            break
-        else:
-            next_prayer = ['Fajr', convert_time(timings['Fajr'], convert_from, wanted_time_format)]
-            # next_prayer = [name, convert_time(timings[name], convert_from, wanted_time_format)] # if including lastthird
-
-    day = data_today['date']['hijri']
-
     if r == "date":
+        day = data_today['date']['hijri']
         print(f'{day["weekday"]["ar"]} {arabnum(day["day"])} {day["month"]["ar"]}, {arabnum(day["year"])}')
-    elif r == "prayer_time":
+
+    if r == "prayer_time": #should this be elif?
+        convert_from = "%H:%M"
+        wanted_time_format = "%I:%M %p"
+        timings = {k:v.split(' ')[0] for k,v in data_today['timings'].items()}
+        del timings['Sunset']
+        del timings['Imsak']
+        del timings['Midnight']
+        del timings['Firstthird']
+        del timings['Lastthird']
+        current_time = datetime.datetime.now().time()
+
+        for name, time in timings.items():
+            datetimed = datetime.datetime.strptime(timings[name], convert_from).time()
+
+            if current_time < datetimed:
+                next_prayer = [name, convert_time(time, convert_from, wanted_time_format)]
+                break
+            else:
+                next_prayer = ['Fajr', convert_time(timings['Fajr'], convert_from, wanted_time_format)]
+                # next_prayer = [name, convert_time(timings[name], convert_from, wanted_time_format)] # if including lastthird
+
         print(f'{next_prayer[0]} {next_prayer[1]}')
 
 if args.date:
