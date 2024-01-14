@@ -1,0 +1,2579 @@
+{
+    "code": 200,
+    "status": "OK",
+    "data": [
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:04 (EST)",
+                "Dhuhr": "12:38 (EST)",
+                "Asr": "15:31 (EST)",
+                "Sunset": "17:13 (EST)",
+                "Maghrib": "17:13 (EST)",
+                "Isha": "18:37 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:38 (EST)",
+                "Firstthird": "22:10 (EST)",
+                "Lastthird": "03:07 (EST)"
+            },
+            "date": {
+                "readable": "01 Jan 2024",
+                "timestamp": "1704117661",
+                "gregorian": {
+                    "date": "01-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "01",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "19-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "19",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "الاثنين"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:04 (EST)",
+                "Dhuhr": "12:39 (EST)",
+                "Asr": "15:32 (EST)",
+                "Sunset": "17:14 (EST)",
+                "Maghrib": "17:14 (EST)",
+                "Isha": "18:38 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:39 (EST)",
+                "Firstthird": "22:11 (EST)",
+                "Lastthird": "03:07 (EST)"
+            },
+            "date": {
+                "readable": "02 Jan 2024",
+                "timestamp": "1704204061",
+                "gregorian": {
+                    "date": "02-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "02",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "20-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "20",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "الثلاثاء"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:04 (EST)",
+                "Dhuhr": "12:39 (EST)",
+                "Asr": "15:33 (EST)",
+                "Sunset": "17:15 (EST)",
+                "Maghrib": "17:15 (EST)",
+                "Isha": "18:39 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:39 (EST)",
+                "Firstthird": "22:11 (EST)",
+                "Lastthird": "03:08 (EST)"
+            },
+            "date": {
+                "readable": "03 Jan 2024",
+                "timestamp": "1704290461",
+                "gregorian": {
+                    "date": "03-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "03",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "21-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "21",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "الاربعاء"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:04 (EST)",
+                "Dhuhr": "12:40 (EST)",
+                "Asr": "15:34 (EST)",
+                "Sunset": "17:16 (EST)",
+                "Maghrib": "17:16 (EST)",
+                "Isha": "18:40 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:40 (EST)",
+                "Firstthird": "22:12 (EST)",
+                "Lastthird": "03:08 (EST)"
+            },
+            "date": {
+                "readable": "04 Jan 2024",
+                "timestamp": "1704376861",
+                "gregorian": {
+                    "date": "04-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "04",
+                    "weekday": {
+                        "en": "Thursday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "22-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "22",
+                    "weekday": {
+                        "en": "Al Khamees",
+                        "ar": "الخميس"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:04 (EST)",
+                "Dhuhr": "12:40 (EST)",
+                "Asr": "15:35 (EST)",
+                "Sunset": "17:17 (EST)",
+                "Maghrib": "17:17 (EST)",
+                "Isha": "18:41 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:40 (EST)",
+                "Firstthird": "22:12 (EST)",
+                "Lastthird": "03:08 (EST)"
+            },
+            "date": {
+                "readable": "05 Jan 2024",
+                "timestamp": "1704463261",
+                "gregorian": {
+                    "date": "05-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "05",
+                    "weekday": {
+                        "en": "Friday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "23-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "23",
+                    "weekday": {
+                        "en": "Al Juma'a",
+                        "ar": "الجمعة"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:04 (EST)",
+                "Dhuhr": "12:41 (EST)",
+                "Asr": "15:36 (EST)",
+                "Sunset": "17:18 (EST)",
+                "Maghrib": "17:18 (EST)",
+                "Isha": "18:41 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:41 (EST)",
+                "Firstthird": "22:13 (EST)",
+                "Lastthird": "03:09 (EST)"
+            },
+            "date": {
+                "readable": "06 Jan 2024",
+                "timestamp": "1704549661",
+                "gregorian": {
+                    "date": "06-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "06",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "24-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "24",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "السبت"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:04 (EST)",
+                "Dhuhr": "12:41 (EST)",
+                "Asr": "15:37 (EST)",
+                "Sunset": "17:19 (EST)",
+                "Maghrib": "17:19 (EST)",
+                "Isha": "18:42 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:41 (EST)",
+                "Firstthird": "22:14 (EST)",
+                "Lastthird": "03:09 (EST)"
+            },
+            "date": {
+                "readable": "07 Jan 2024",
+                "timestamp": "1704636061",
+                "gregorian": {
+                    "date": "07-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "07",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "25-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "25",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "الاحد"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:04 (EST)",
+                "Dhuhr": "12:42 (EST)",
+                "Asr": "15:38 (EST)",
+                "Sunset": "17:20 (EST)",
+                "Maghrib": "17:20 (EST)",
+                "Isha": "18:43 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:42 (EST)",
+                "Firstthird": "22:14 (EST)",
+                "Lastthird": "03:09 (EST)"
+            },
+            "date": {
+                "readable": "08 Jan 2024",
+                "timestamp": "1704722461",
+                "gregorian": {
+                    "date": "08-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "08",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "26-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "26",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "الاثنين"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:03 (EST)",
+                "Dhuhr": "12:42 (EST)",
+                "Asr": "15:39 (EST)",
+                "Sunset": "17:21 (EST)",
+                "Maghrib": "17:21 (EST)",
+                "Isha": "18:44 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:42 (EST)",
+                "Firstthird": "22:15 (EST)",
+                "Lastthird": "03:09 (EST)"
+            },
+            "date": {
+                "readable": "09 Jan 2024",
+                "timestamp": "1704808861",
+                "gregorian": {
+                    "date": "09-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "09",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "27-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "27",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "الثلاثاء"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:03 (EST)",
+                "Dhuhr": "12:42 (EST)",
+                "Asr": "15:40 (EST)",
+                "Sunset": "17:22 (EST)",
+                "Maghrib": "17:22 (EST)",
+                "Isha": "18:45 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:43 (EST)",
+                "Firstthird": "22:16 (EST)",
+                "Lastthird": "03:09 (EST)"
+            },
+            "date": {
+                "readable": "10 Jan 2024",
+                "timestamp": "1704895261",
+                "gregorian": {
+                    "date": "10-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "10",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "28-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "28",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "الاربعاء"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:03 (EST)",
+                "Dhuhr": "12:43 (EST)",
+                "Asr": "15:41 (EST)",
+                "Sunset": "17:23 (EST)",
+                "Maghrib": "17:23 (EST)",
+                "Isha": "18:46 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:43 (EST)",
+                "Firstthird": "22:16 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "11 Jan 2024",
+                "timestamp": "1704981661",
+                "gregorian": {
+                    "date": "11-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "11",
+                    "weekday": {
+                        "en": "Thursday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "29-06-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "29",
+                    "weekday": {
+                        "en": "Al Khamees",
+                        "ar": "الخميس"
+                    },
+                    "month": {
+                        "number": 6,
+                        "en": "Jumādá al-ākhirah",
+                        "ar": "جُمادى الآخرة"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:03 (EST)",
+                "Dhuhr": "12:43 (EST)",
+                "Asr": "15:42 (EST)",
+                "Sunset": "17:24 (EST)",
+                "Maghrib": "17:24 (EST)",
+                "Isha": "18:47 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:43 (EST)",
+                "Firstthird": "22:17 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "12 Jan 2024",
+                "timestamp": "1705068061",
+                "gregorian": {
+                    "date": "12-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "12",
+                    "weekday": {
+                        "en": "Friday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "01-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "01",
+                    "weekday": {
+                        "en": "Al Juma'a",
+                        "ar": "الجمعة"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:23 (EST)",
+                "Sunrise": "08:02 (EST)",
+                "Dhuhr": "12:44 (EST)",
+                "Asr": "15:43 (EST)",
+                "Sunset": "17:25 (EST)",
+                "Maghrib": "17:25 (EST)",
+                "Isha": "18:48 (EST)",
+                "Imsak": "06:13 (EST)",
+                "Midnight": "00:44 (EST)",
+                "Firstthird": "22:18 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "13 Jan 2024",
+                "timestamp": "1705154461",
+                "gregorian": {
+                    "date": "13-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "13",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "02-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "02",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "السبت"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:22 (EST)",
+                "Sunrise": "08:02 (EST)",
+                "Dhuhr": "12:44 (EST)",
+                "Asr": "15:44 (EST)",
+                "Sunset": "17:26 (EST)",
+                "Maghrib": "17:26 (EST)",
+                "Isha": "18:49 (EST)",
+                "Imsak": "06:12 (EST)",
+                "Midnight": "00:44 (EST)",
+                "Firstthird": "22:18 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "14 Jan 2024",
+                "timestamp": "1705240861",
+                "gregorian": {
+                    "date": "14-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "14",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "03-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "03",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "الاحد"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:22 (EST)",
+                "Sunrise": "08:01 (EST)",
+                "Dhuhr": "12:44 (EST)",
+                "Asr": "15:45 (EST)",
+                "Sunset": "17:27 (EST)",
+                "Maghrib": "17:27 (EST)",
+                "Isha": "18:50 (EST)",
+                "Imsak": "06:12 (EST)",
+                "Midnight": "00:44 (EST)",
+                "Firstthird": "22:19 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "15 Jan 2024",
+                "timestamp": "1705327261",
+                "gregorian": {
+                    "date": "15-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "15",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "04-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "04",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "الاثنين"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:22 (EST)",
+                "Sunrise": "08:01 (EST)",
+                "Dhuhr": "12:45 (EST)",
+                "Asr": "15:47 (EST)",
+                "Sunset": "17:29 (EST)",
+                "Maghrib": "17:29 (EST)",
+                "Isha": "18:51 (EST)",
+                "Imsak": "06:12 (EST)",
+                "Midnight": "00:45 (EST)",
+                "Firstthird": "22:19 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "16 Jan 2024",
+                "timestamp": "1705413661",
+                "gregorian": {
+                    "date": "16-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "16",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "05-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "05",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "الثلاثاء"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:22 (EST)",
+                "Sunrise": "08:01 (EST)",
+                "Dhuhr": "12:45 (EST)",
+                "Asr": "15:48 (EST)",
+                "Sunset": "17:30 (EST)",
+                "Maghrib": "17:30 (EST)",
+                "Isha": "18:52 (EST)",
+                "Imsak": "06:12 (EST)",
+                "Midnight": "00:45 (EST)",
+                "Firstthird": "22:20 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "17 Jan 2024",
+                "timestamp": "1705500061",
+                "gregorian": {
+                    "date": "17-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "17",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "06-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "06",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "الاربعاء"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:21 (EST)",
+                "Sunrise": "08:00 (EST)",
+                "Dhuhr": "12:45 (EST)",
+                "Asr": "15:49 (EST)",
+                "Sunset": "17:31 (EST)",
+                "Maghrib": "17:31 (EST)",
+                "Isha": "18:53 (EST)",
+                "Imsak": "06:11 (EST)",
+                "Midnight": "00:46 (EST)",
+                "Firstthird": "22:21 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "18 Jan 2024",
+                "timestamp": "1705586461",
+                "gregorian": {
+                    "date": "18-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "18",
+                    "weekday": {
+                        "en": "Thursday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "07-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "07",
+                    "weekday": {
+                        "en": "Al Khamees",
+                        "ar": "الخميس"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:21 (EST)",
+                "Sunrise": "07:59 (EST)",
+                "Dhuhr": "12:46 (EST)",
+                "Asr": "15:50 (EST)",
+                "Sunset": "17:32 (EST)",
+                "Maghrib": "17:32 (EST)",
+                "Isha": "18:54 (EST)",
+                "Imsak": "06:11 (EST)",
+                "Midnight": "00:46 (EST)",
+                "Firstthird": "22:21 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "19 Jan 2024",
+                "timestamp": "1705672861",
+                "gregorian": {
+                    "date": "19-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "19",
+                    "weekday": {
+                        "en": "Friday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "08-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "08",
+                    "weekday": {
+                        "en": "Al Juma'a",
+                        "ar": "الجمعة"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:20 (EST)",
+                "Sunrise": "07:59 (EST)",
+                "Dhuhr": "12:46 (EST)",
+                "Asr": "15:51 (EST)",
+                "Sunset": "17:33 (EST)",
+                "Maghrib": "17:33 (EST)",
+                "Isha": "18:55 (EST)",
+                "Imsak": "06:10 (EST)",
+                "Midnight": "00:46 (EST)",
+                "Firstthird": "22:22 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "20 Jan 2024",
+                "timestamp": "1705759261",
+                "gregorian": {
+                    "date": "20-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "20",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "09-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "09",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "السبت"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:20 (EST)",
+                "Sunrise": "07:58 (EST)",
+                "Dhuhr": "12:46 (EST)",
+                "Asr": "15:53 (EST)",
+                "Sunset": "17:35 (EST)",
+                "Maghrib": "17:35 (EST)",
+                "Isha": "18:56 (EST)",
+                "Imsak": "06:10 (EST)",
+                "Midnight": "00:46 (EST)",
+                "Firstthird": "22:23 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "21 Jan 2024",
+                "timestamp": "1705845661",
+                "gregorian": {
+                    "date": "21-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "21",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "10-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "10",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "الاحد"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:19 (EST)",
+                "Sunrise": "07:57 (EST)",
+                "Dhuhr": "12:46 (EST)",
+                "Asr": "15:54 (EST)",
+                "Sunset": "17:36 (EST)",
+                "Maghrib": "17:36 (EST)",
+                "Isha": "18:57 (EST)",
+                "Imsak": "06:09 (EST)",
+                "Midnight": "00:47 (EST)",
+                "Firstthird": "22:23 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "22 Jan 2024",
+                "timestamp": "1705932061",
+                "gregorian": {
+                    "date": "22-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "22",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "11-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "11",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "الاثنين"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:19 (EST)",
+                "Sunrise": "07:57 (EST)",
+                "Dhuhr": "12:47 (EST)",
+                "Asr": "15:55 (EST)",
+                "Sunset": "17:37 (EST)",
+                "Maghrib": "17:37 (EST)",
+                "Isha": "18:58 (EST)",
+                "Imsak": "06:09 (EST)",
+                "Midnight": "00:47 (EST)",
+                "Firstthird": "22:24 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "23 Jan 2024",
+                "timestamp": "1706018461",
+                "gregorian": {
+                    "date": "23-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "23",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "12-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "12",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "الثلاثاء"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:18 (EST)",
+                "Sunrise": "07:56 (EST)",
+                "Dhuhr": "12:47 (EST)",
+                "Asr": "15:56 (EST)",
+                "Sunset": "17:38 (EST)",
+                "Maghrib": "17:38 (EST)",
+                "Isha": "19:00 (EST)",
+                "Imsak": "06:08 (EST)",
+                "Midnight": "00:47 (EST)",
+                "Firstthird": "22:24 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "24 Jan 2024",
+                "timestamp": "1706104861",
+                "gregorian": {
+                    "date": "24-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "24",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "13-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "13",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "الاربعاء"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:18 (EST)",
+                "Sunrise": "07:55 (EST)",
+                "Dhuhr": "12:47 (EST)",
+                "Asr": "15:57 (EST)",
+                "Sunset": "17:40 (EST)",
+                "Maghrib": "17:40 (EST)",
+                "Isha": "19:01 (EST)",
+                "Imsak": "06:08 (EST)",
+                "Midnight": "00:47 (EST)",
+                "Firstthird": "22:25 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "25 Jan 2024",
+                "timestamp": "1706191261",
+                "gregorian": {
+                    "date": "25-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "25",
+                    "weekday": {
+                        "en": "Thursday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "14-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "14",
+                    "weekday": {
+                        "en": "Al Khamees",
+                        "ar": "الخميس"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:17 (EST)",
+                "Sunrise": "07:54 (EST)",
+                "Dhuhr": "12:47 (EST)",
+                "Asr": "15:59 (EST)",
+                "Sunset": "17:41 (EST)",
+                "Maghrib": "17:41 (EST)",
+                "Isha": "19:02 (EST)",
+                "Imsak": "06:07 (EST)",
+                "Midnight": "00:48 (EST)",
+                "Firstthird": "22:25 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "26 Jan 2024",
+                "timestamp": "1706277661",
+                "gregorian": {
+                    "date": "26-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "26",
+                    "weekday": {
+                        "en": "Friday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "15-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "15",
+                    "weekday": {
+                        "en": "Al Juma'a",
+                        "ar": "الجمعة"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:16 (EST)",
+                "Sunrise": "07:54 (EST)",
+                "Dhuhr": "12:48 (EST)",
+                "Asr": "16:00 (EST)",
+                "Sunset": "17:42 (EST)",
+                "Maghrib": "17:42 (EST)",
+                "Isha": "19:03 (EST)",
+                "Imsak": "06:06 (EST)",
+                "Midnight": "00:48 (EST)",
+                "Firstthird": "22:26 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "27 Jan 2024",
+                "timestamp": "1706364061",
+                "gregorian": {
+                    "date": "27-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "27",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "16-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "16",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "السبت"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:16 (EST)",
+                "Sunrise": "07:53 (EST)",
+                "Dhuhr": "12:48 (EST)",
+                "Asr": "16:01 (EST)",
+                "Sunset": "17:44 (EST)",
+                "Maghrib": "17:44 (EST)",
+                "Isha": "19:04 (EST)",
+                "Imsak": "06:06 (EST)",
+                "Midnight": "00:48 (EST)",
+                "Firstthird": "22:27 (EST)",
+                "Lastthird": "03:10 (EST)"
+            },
+            "date": {
+                "readable": "28 Jan 2024",
+                "timestamp": "1706450461",
+                "gregorian": {
+                    "date": "28-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "28",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "17-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "17",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "الاحد"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:15 (EST)",
+                "Sunrise": "07:52 (EST)",
+                "Dhuhr": "12:48 (EST)",
+                "Asr": "16:02 (EST)",
+                "Sunset": "17:45 (EST)",
+                "Maghrib": "17:45 (EST)",
+                "Isha": "19:05 (EST)",
+                "Imsak": "06:05 (EST)",
+                "Midnight": "00:48 (EST)",
+                "Firstthird": "22:27 (EST)",
+                "Lastthird": "03:09 (EST)"
+            },
+            "date": {
+                "readable": "29 Jan 2024",
+                "timestamp": "1706536861",
+                "gregorian": {
+                    "date": "29-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "29",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "18-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "18",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "الاثنين"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:14 (EST)",
+                "Sunrise": "07:51 (EST)",
+                "Dhuhr": "12:48 (EST)",
+                "Asr": "16:04 (EST)",
+                "Sunset": "17:46 (EST)",
+                "Maghrib": "17:46 (EST)",
+                "Isha": "19:06 (EST)",
+                "Imsak": "06:04 (EST)",
+                "Midnight": "00:48 (EST)",
+                "Firstthird": "22:28 (EST)",
+                "Lastthird": "03:09 (EST)"
+            },
+            "date": {
+                "readable": "30 Jan 2024",
+                "timestamp": "1706623261",
+                "gregorian": {
+                    "date": "30-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "30",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "19-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "19",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "الثلاثاء"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "06:13 (EST)",
+                "Sunrise": "07:50 (EST)",
+                "Dhuhr": "12:48 (EST)",
+                "Asr": "16:05 (EST)",
+                "Sunset": "17:47 (EST)",
+                "Maghrib": "17:47 (EST)",
+                "Isha": "19:07 (EST)",
+                "Imsak": "06:03 (EST)",
+                "Midnight": "00:49 (EST)",
+                "Firstthird": "22:28 (EST)",
+                "Lastthird": "03:09 (EST)"
+            },
+            "date": {
+                "readable": "31 Jan 2024",
+                "timestamp": "1706709661",
+                "gregorian": {
+                    "date": "31-01-2024",
+                    "format": "DD-MM-YYYY",
+                    "day": "31",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 1,
+                        "en": "January"
+                    },
+                    "year": "2024",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    }
+                },
+                "hijri": {
+                    "date": "20-07-1445",
+                    "format": "DD-MM-YYYY",
+                    "day": "20",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "الاربعاء"
+                    },
+                    "month": {
+                        "number": 7,
+                        "en": "Rajab",
+                        "ar": "رَجَب"
+                    },
+                    "year": "1445",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": []
+                }
+            },
+            "meta": {
+                "latitude": 42.2776,
+                "longitude": -83.7409,
+                "timezone": "America/Detroit",
+                "method": {
+                    "name": "Custom",
+                    "params": {
+                        "Fajr": "18",
+                        "Isha": "15",
+                        "Maghrib": "null"
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "HANAFI",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        }
+    ]
+}

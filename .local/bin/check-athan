@@ -3,6 +3,7 @@
 # yoyomanzoor
 # Uses ipinfo.io to get location and then uses aladhan.com to get prayer times
 
+import os
 import sys
 import argparse
 import urllib.request
@@ -10,34 +11,68 @@ import json
 import datetime
 
 parser = argparse.ArgumentParser(description='Get prayer times')
-# parser.add_argument('-h', '--help', action='store_true', help='Show help')
 parser.add_argument('-d', '--date', action='store_true', help='Get date')
 parser.add_argument('-t', '--time', action='store_true', help='Get time')
+if len(sys.argv) == 1:
+    parser.print_help(sys.stderr)
+    sys.exit(1)
 args = parser.parse_args()
 
+# file to store prayer times for the month
+home = os.path.expanduser('~')
+filename = f'{home}/.local/bin/calendar/{datetime.datetime.now().strftime("%Y-%m")}.json'
+
+def initialize():
+    # create directory for monthly prayer times json files
+    # create monthly prayer times json file if it doesn't exist
+
+    def get_location():
+        # get location from ipinfo.io
+        url = 'https://ipinfo.io/loc'
+        with urllib.request.urlopen(url) as response:
+            ip = response.read().decode('utf-8')
+
+        ip = ip.split('\n')[0].split(',')
+        return ip
+
+    try:
+        os.makedirs(f'{home}/.local/bin/calendar')
+    except FileExistsError:
+        # directory already exists
+        pass
+
+    if not os.path.isfile(filename):
+        # monthly prayer times json file doesn't exist, so we create it
+        ip = get_location()
+        url = f'http://api.aladhan.com/calendar?latitude={ip[0]}&longitude={ip[1]}&school=1&method=99&methodSettings=18,null,15'
+        with urllib.request.urlopen(url) as response:
+            html = response.read()
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(json.loads(html), f, ensure_ascii=False, indent=4)
+
 def arabnum(western_num):
+    # convert western numbers to arabic numbers
     t = western_num.maketrans('0123456789', '٠١٢٣٤٥٦٧٨٩')
     return western_num.translate(t)
 
 def convert_time(time, convert_from, convert_to):
+    # convert time from one format to another
     return datetime.datetime.strptime(time, convert_from).time().strftime(convert_to)
 
 def athan(r):
+    # main function
+    # initialize() creates directory and monthly prayer times json file if they don't exist
+    # r is either "date" or "prayer_time"
+    # "date" returns the date in arabic
+    # "prayer_time" returns the next prayer time
 
-    url = 'https://ipinfo.io/loc'
-    with urllib.request.urlopen(url) as response:
-        ip = response.read().decode('utf-8')
-
-    ip = ip.split("\n")[0].split(",")
-
-    url = f'http://api.aladhan.com/timings?latitude={ip[0]}&longitude={ip[1]}&school=1&method=99&methodSettings=18,null,15'
-
-    with urllib.request.urlopen(url) as response:
-        html = response.read()
+    initialize()
+    data = json.load(open(filename, encoding='utf-8'))
+    data_today = data['data'][datetime.datetime.now().day-1]
 
     convert_from = "%H:%M"
     wanted_time_format = "%I:%M %p"
-    timings = json.loads(html)['data']['timings']
+    timings = {k:v.split(' ')[0] for k,v in data_today['timings'].items()}
     del timings['Sunset']
     del timings['Imsak']
     del timings['Midnight']
@@ -55,22 +90,17 @@ def athan(r):
             next_prayer = ['Fajr', convert_time(timings['Fajr'], convert_from, wanted_time_format)]
             # next_prayer = [name, convert_time(timings[name], convert_from, wanted_time_format)] # if including lastthird
 
-    day = json.loads(html)['data']['date']['hijri']
+    day = data_today['date']['hijri']
 
-    if r == 0:
+    if r == "date":
         print(f'{day["weekday"]["ar"]} {arabnum(day["day"])} {day["month"]["ar"]}, {arabnum(day["year"])}')
-    elif r == 1:
+    elif r == "prayer_time":
         print(f'{next_prayer[0]} {next_prayer[1]}')
 
-
-# if args.help:
-#     print('Usage: check-athan')
-#     sys.exit()
 if args.date:
-    athan(0)
+    athan("date")
 elif args.time:
-    athan(1)
+    athan("prayer_time")
 else:
     print('Usage: check-athan')
     print(args)
-    sys.exit()
