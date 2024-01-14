@@ -109,7 +109,21 @@ apply_alacritty() {
     cp "scripts/templates/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
     # Apply colors
     for i in "${!colorlist[@]}"; do
-        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/alacritty/alacritty.toml" # note: ff because theyre opaque
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/alacritty/alacritty.toml" 
+    done
+}
+
+apply_kitty() {
+    # Check if scripts/templates/kitty/kitty.conf exists
+    if [ ! -f "scripts/templates/kitty/kitty.conf" ]; then
+        echo "Template file not found for Kitty. Skipping that."
+        return
+    fi
+    # Copy template
+    cp "scripts/templates/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
+    # Apply colors
+    for i in "${!colorlist[@]}"; do
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/kitty/kitty.conf" 
     done
 }
 
@@ -168,4 +182,5 @@ apply_gtk &
 apply_gtklock &
 apply_fuzzel &
 apply_foot &
-apply_alacritty
+apply_alacritty &
+apply_kitty

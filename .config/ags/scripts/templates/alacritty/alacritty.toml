@@ -3,7 +3,7 @@ style = "Beam"
 
 [window]
 dynamic_padding = true
-opacity = 0.9
+opacity = 0.8
 #blur = true
 
 [window.padding]
