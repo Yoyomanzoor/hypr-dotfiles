@@ -80,6 +80,11 @@ const Utilities = () => Box({
                 App.toggleWindow('osk');
             }
         }),
+        UtilButton({
+            name: 'Change theme', icon: 'palette', onClicked: () => {
+                Utils.execAsync(['bash', '-c', '$HOME/.config/ags/scripts/color_generation/randomwallpaper.sh']).catch(print)
+            }
+        }),
     ]
 })
 
@@ -175,19 +180,34 @@ const BarResource = (name, icon, command) => {
     return widget;
 }
 
+const BarHijri = () => Widget.Box({
+    vpack: 'center',
+    className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
+    children: [
+        Widget.Label({
+            className: 'txt-smallie',
+            connections: [[50000, (label) => execAsync(['check-athan', '-d'])
+                .then((output) => {
+                    label.label = output;
+                }).catch(print)
+            ]],
+        }),
+    ],
+});
+
 const BarAthan = () => Widget.Box({
     vpack: 'center',
     className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
     children: [
         Widget.Label({
             className: 'txt-smallie',
-            connections: [[50000, (label) => execAsync(['check-athan'])
+            connections: [[50000, (label) => execAsync(['check-athan', '-t'])
                 .then((output) => {
                     label.label = output;
                 }).catch(print)
             ]],
         }),
-    ],         
+    ],
 });
 
 
@@ -209,6 +229,7 @@ export const ModuleSystem = () => Widget.EventBox({
         className: 'spacing-h-5',
         children: [
             BarGroup({ child: BarClock() }),
+            BarGroup({ child: BarHijri() }),
             BarGroup({ child: BarAthan() }),
             Stack({
                 transition: 'slide_up_down',

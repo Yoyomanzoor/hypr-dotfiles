@@ -1,8 +1,9 @@
 ## TODO
 
 - [ ] Replace the waifu thing with a prayer time widget
-- [x] Prayer times in top bar
 - [ ] Remake the Quran thing from KDE setup to sidebar
+- [ ] Fix mpv so ytfzf shows in media bar
+- [x] Prayer times in top bar
 - [x] Update color changing script to include other tools, like `alacritty`, 
 
 ## Setup
