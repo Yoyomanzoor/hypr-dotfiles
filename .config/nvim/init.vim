@@ -148,6 +148,9 @@ set clipboard=unnamedplus
 ":noremap vs :vsplit<CR>
 ":noremap hs :split<CR>
 
+"search highlighted text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
