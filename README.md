@@ -1,7 +1,7 @@
 ## TODO
 
 - [ ] Replace the waifu thing with a prayer time widget
-- [ ] Prayer times in top bar
+- [x] Prayer times in top bar
 - [ ] Remake the Quran thing from KDE setup to sidebar
 - [x] Update color changing script to include other tools, like `alacritty`, 
 

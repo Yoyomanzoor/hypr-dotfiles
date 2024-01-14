@@ -175,6 +175,22 @@ const BarResource = (name, icon, command) => {
     return widget;
 }
 
+const BarAthan = () => Widget.Box({
+    vpack: 'center',
+    className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
+    children: [
+        Widget.Label({
+            className: 'txt-smallie',
+            connections: [[50000, (label) => execAsync(['check-athan'])
+                .then((output) => {
+                    label.label = output;
+                }).catch(print)
+            ]],
+        }),
+    ],         
+});
+
+
 const BarGroup = ({ child }) => Widget.Box({
     className: 'bar-group-margin bar-sides',
     children: [
@@ -193,6 +209,7 @@ export const ModuleSystem = () => Widget.EventBox({
         className: 'spacing-h-5',
         children: [
             BarGroup({ child: BarClock() }),
+            BarGroup({ child: BarAthan() }),
             Stack({
                 transition: 'slide_up_down',
                 transitionDuration: 150,
@@ -203,7 +220,9 @@ export const ModuleSystem = () => Widget.EventBox({
                             BarGroup({ child: BarBattery() }),
                             BarGroup({ child: BarResource('CPU usage', 'developer_board', `mpstat | awk '/all/ {print($4 + $11)}'`), }),
                             BarGroup({ child: BarResource('RAM usage', 'memory', `free | awk '/^Mem/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),
-                            BarGroup({ child: BarResource('Swap usage', 'swap_horiz', `free | awk '/^Swap/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),
+                            // BarGroup({ child: BarResource('Swap usage', 'swap_horiz', `free | awk '/^Swap/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),
+                            // BarGroup({ child: BarResource('Disk usage', 'storage', `df -h | awk '/^\/dev\/nvme0n1p2/' | head -1 | awk '{printf("%.2f\\n", $5)}'`), }),
+                            // BarGroup({ child: BarResource('Next Prayer Time', '',  ) })
                         ]
                     })],
                     ['desktop', Box({
