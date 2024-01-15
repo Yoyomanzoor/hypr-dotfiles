@@ -7,7 +7,7 @@ import { ModuleMusic } from "./music.js";
 import { ModuleRightSpace } from "./rightspace.js";
 import { ModuleSystem } from "./system.js";
 import ModuleWorkspaces from "./workspaces.js";
-import { RoundedCorner } from "../../lib/roundedcorner.js";
+// import { RoundedCorner } from "../../lib/roundedcorner.js";
 
 const left = Widget.Box({
     className: 'bar-sidemodule',

@@ -5,6 +5,7 @@ import { App, Utils } from './imports.js';
 // Widgets
 import Bar from './widgets/bar/main.js';
 import Cheatsheet from './widgets/cheatsheet/main.js';
+import PrayerTimes from './widgets/prayertimes/main.js';
 // import DesktopBackground from './widgets/desktopbackground/main.js';
 // import Dock from './widgets/dock/main.js';
 import { CornerTopleft, CornerTopright, CornerBottomleft, CornerBottomright } from './widgets/screencorners/main.js';
@@ -47,6 +48,7 @@ export default {
         Overview(),
         Indicator(),
         Cheatsheet(),
+        PrayerTimes(),
         SideLeft(),
         SideRight(),
         Osk(), // On-screen keyboard

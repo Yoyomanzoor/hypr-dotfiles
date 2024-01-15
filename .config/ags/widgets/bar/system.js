@@ -195,19 +195,23 @@ const BarHijri = () => Widget.Box({
     ],
 });
 
-const BarAthan = () => Widget.Box({
-    vpack: 'center',
-    className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
-    children: [
-        Widget.Label({
-            className: 'txt-smallie',
-            connections: [[50000, (label) => execAsync(['check-athan', '-t'])
-                .then((output) => {
-                    label.label = output;
-                }).catch(print)
-            ]],
-        }),
-    ],
+const BarAthan = () => Widget.EventBox({
+    // onPrimaryClickRelease: () => showPrayerTimes.setValue(!showPrayerTimes.value),
+    onPrimaryClick: () => App.toggleWindow('prayertimes'),
+    child: Widget.Box({
+        vpack: 'center',
+        className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
+        children: [
+            Widget.Label({
+                className: 'txt-smallie',
+                connections: [[5000, (label) => execAsync(['check-athan', '-t'])
+                    .then((output) => {
+                        label.label = output;
+                    }).catch(print)
+                ]],
+            }),
+        ],
+    })
 });
 
 

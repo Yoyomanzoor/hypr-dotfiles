@@ -3,6 +3,7 @@
 - [ ] Replace the waifu thing with a prayer time widget
 - [ ] Remake the Quran thing from KDE setup to sidebar
 - [ ] Fix mpv so ytfzf shows in media bar
+- [ ] Update hint tooltip for both hyprland and nvim
 - [x] Prayer times in top bar
 - [x] Update color changing script to include other tools, like `alacritty`, 
 
@@ -49,6 +50,19 @@ home push origin main #or whatever branch
 ```
 
 ## Random thoughts
+
+### How making a widget works
+
+Everying is containerized, and documentation for arguments they can take are [here](https://aylur.github.io/ags-docs/config/widgets/).
+
+Making the prayer times widget:
+- Move around classes of top bar, such that instead of just a left, top, and right, there are separate things for the clock and for salah times. This way, clicking on each part of the bar can have different effects.
+- Create the widget itself
+    - Create `prayertimes.js` in widget folder, this is the actual popup
+    - Call it in `config.js` so it's exposed to App
+    - Call it in the topbar widget box so that the popup is opened when clicked
+
+The advantage to this: it can be opened via a command line ags call (`ags -t prayertimes`), meaning it can be called from pretty much anywhere.
 
 ### How changing colors works
 
