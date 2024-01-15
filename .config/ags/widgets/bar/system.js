@@ -27,31 +27,6 @@ const BatBatteryProgress = () => {
     })
 }
 
-const BarClock = () => Widget.Box({
-    vpack: 'center',
-    className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
-    children: [
-        Widget.Label({
-            className: 'bar-clock',
-            label: GLib.DateTime.new_now_local().format("%I:%M %p"),
-            setup: (self) => self.poll(5000, label => {
-                label.label = GLib.DateTime.new_now_local().format("%I:%M %p");
-            }),
-        }),
-        Widget.Label({
-            className: 'txt-norm',
-            label: '•',
-        }),
-        Widget.Label({
-            className: 'txt-smallie',
-            label: GLib.DateTime.new_now_local().format("%A, %m/%d"),
-            setup: (self) => self.poll(5000, label => {
-                label.label = GLib.DateTime.new_now_local().format("%A, %m/%d");
-            }),
-        }),
-    ],
-});
-
 const UtilButton = ({ name, icon, onClicked }) => Button({
     vpack: 'center',
     tooltipText: name,
@@ -180,41 +155,6 @@ const BarResource = (name, icon, command) => {
     return widget;
 }
 
-const BarHijri = () => Widget.Box({
-    vpack: 'center',
-    className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
-    children: [
-        Widget.Label({
-            className: 'txt-smallie',
-            connections: [[50000, (label) => execAsync(['check-athan', '-d'])
-                .then((output) => {
-                    label.label = output;
-                }).catch(print)
-            ]],
-        }),
-    ],
-});
-
-const BarAthan = () => Widget.EventBox({
-    // onPrimaryClickRelease: () => showPrayerTimes.setValue(!showPrayerTimes.value),
-    onPrimaryClick: () => App.toggleWindow('prayertimes'),
-    child: Widget.Box({
-        vpack: 'center',
-        className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
-        children: [
-            Widget.Label({
-                className: 'txt-smallie',
-                connections: [[5000, (label) => execAsync(['check-athan', '-t'])
-                    .then((output) => {
-                        label.label = output;
-                    }).catch(print)
-                ]],
-            }),
-        ],
-    })
-});
-
-
 const BarGroup = ({ child }) => Widget.Box({
     className: 'bar-group-margin bar-sides',
     children: [
@@ -232,9 +172,6 @@ export const ModuleSystem = () => Widget.EventBox({
     child: Widget.Box({
         className: 'spacing-h-5',
         children: [
-            BarGroup({ child: BarClock() }),
-            BarGroup({ child: BarHijri() }),
-            BarGroup({ child: BarAthan() }),
             Stack({
                 transition: 'slide_up_down',
                 transitionDuration: 150,
@@ -247,7 +184,6 @@ export const ModuleSystem = () => Widget.EventBox({
                             BarGroup({ child: BarResource('RAM usage', 'memory', `free | awk '/^Mem/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),
                             // BarGroup({ child: BarResource('Swap usage', 'swap_horiz', `free | awk '/^Swap/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),
                             // BarGroup({ child: BarResource('Disk usage', 'storage', `df -h | awk '/^\/dev\/nvme0n1p2/' | head -1 | awk '{printf("%.2f\\n", $5)}'`), }),
-                            // BarGroup({ child: BarResource('Next Prayer Time', '',  ) })
                         ]
                     })],
                     ['desktop', Box({

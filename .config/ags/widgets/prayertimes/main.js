@@ -51,7 +51,7 @@ const clickOutsideToClose = Widget.EventBox({
 
 export default () => Widget.Window({
     name: 'prayertimes',
-    exclusivity: 'ignore',
+    exclusivity: 'normal',
     focusable: true,
     popup: true,
     visible: false,

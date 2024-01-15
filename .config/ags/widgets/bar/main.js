@@ -6,6 +6,8 @@ import { ModuleLeftSpace } from "./leftspace.js";
 import { ModuleMusic } from "./music.js";
 import { ModuleRightSpace } from "./rightspace.js";
 import { ModuleSystem } from "./system.js";
+import { ModulePrayer} from "./prayerspace.js";
+import { ModuleClock } from "./clock.js";
 import ModuleWorkspaces from "./workspaces.js";
 // import { RoundedCorner } from "../../lib/roundedcorner.js";
 
@@ -19,6 +21,18 @@ const left = Widget.Box({
 const center = Widget.Box({
     children: [
         ModuleWorkspaces(),
+    ],
+});
+
+const clock = Widget.Box({
+    children: [
+        ModuleClock()
+    ],
+});
+
+const salah = Widget.Box({
+    children: [
+        ModulePrayer()
     ],
 });
 
@@ -40,6 +54,8 @@ export default () => Widget.Window({
             children: [
                 left,
                 center,
+                clock,
+                salah,
                 right,
             ]
         }),
