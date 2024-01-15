@@ -13,6 +13,7 @@ import datetime
 parser = argparse.ArgumentParser(description='Get prayer times')
 parser.add_argument('-d', '--date', action='store_true', help='Get date')
 parser.add_argument('-t', '--time', action='store_true', help='Get time')
+parser.add_argument('-s', '--salah', metavar='SALAH', type=str, default='fajr', help='return time for today for SALAH. SALAH can be fajr, sunrise, dhuhr, asr, maghrib, isha, or next')
 if len(sys.argv) == 1:
     parser.print_help(sys.stderr)
     sys.exit(1)
@@ -59,7 +60,7 @@ def convert_time(time, convert_from, convert_to):
     # convert time from one format to another
     return datetime.datetime.strptime(time, convert_from).time().strftime(convert_to)
 
-def athan(r):
+def athan(salah=None, r=None):
     # main function
     # initialize() creates directory and monthly prayer times json file if they don't exist
     # r is either "date" or "prayer_time"
@@ -70,37 +71,56 @@ def athan(r):
     data = json.load(open(filename, encoding='utf-8'))
     data_today = data['data'][datetime.datetime.now().day-1]
 
-    if r == "date":
-        day = data_today['date']['hijri']
-        print(f'{day["weekday"]["ar"]} {arabnum(day["day"])} {day["month"]["ar"]}, {arabnum(day["year"])}')
+    convert_from = "%H:%M"
+    wanted_time_format = "%I:%M %p"
 
-    if r == "prayer_time": #should this be elif?
-        convert_from = "%H:%M"
-        wanted_time_format = "%I:%M %p"
-        timings = {k:v.split(' ')[0] for k,v in data_today['timings'].items()}
-        del timings['Sunset']
-        del timings['Imsak']
-        del timings['Midnight']
-        del timings['Firstthird']
-        del timings['Lastthird']
-        current_time = datetime.datetime.now().time()
+    if salah == 'fajr':
+        print(convert_time(data_today['timings']['Fajr'].split(' ')[0], convert_from, wanted_time_format))
+    elif salah == 'sunrise':
+        print(convert_time(data_today['timings']['Sunrise'].split(' ')[0], convert_from, wanted_time_format))
+    elif salah == 'dhuhr':
+        print(convert_time(data_today['timings']['Dhuhr'].split(' ')[0], convert_from, wanted_time_format))
+    elif salah == 'asr':
+        print(convert_time(data_today['timings']['Asr'].split(' ')[0], convert_from, wanted_time_format))
+    elif salah == 'maghrib':
+        print(convert_time(data_today['timings']['Maghrib'].split(' ')[0], convert_from, wanted_time_format))
+    elif salah == 'isha':
+        print(convert_time(data_today['timings']['Isha'].split(' ')[0], convert_from, wanted_time_format))
 
-        for name, time in timings.items():
-            datetimed = datetime.datetime.strptime(timings[name], convert_from).time()
+    if not r:
+        return
+    else:
+        if r == "date":
+            day = data_today['date']['hijri']
+            print(f'{day["weekday"]["ar"]} {arabnum(day["day"])} {day["month"]["ar"]}, {arabnum(day["year"])}')
 
-            if current_time < datetimed:
-                next_prayer = [name, convert_time(time, convert_from, wanted_time_format)]
-                break
-            else:
-                next_prayer = ['Fajr', convert_time(timings['Fajr'], convert_from, wanted_time_format)]
-                # next_prayer = [name, convert_time(timings[name], convert_from, wanted_time_format)] # if including lastthird
+        if r == "prayer_time": #should this be elif?
+            timings = {k:v.split(' ')[0] for k,v in data_today['timings'].items()}
+            del timings['Sunset']
+            del timings['Imsak']
+            del timings['Midnight']
+            del timings['Firstthird']
+            del timings['Lastthird']
+            current_time = datetime.datetime.now().time()
 
-        print(f'{next_prayer[0]} {next_prayer[1]}')
+            for name, time in timings.items():
+                datetimed = datetime.datetime.strptime(timings[name], convert_from).time()
+
+                if current_time < datetimed:
+                    next_prayer = [name, convert_time(time, convert_from, wanted_time_format)]
+                    break
+                else:
+                    next_prayer = ['Fajr', convert_time(timings['Fajr'], convert_from, wanted_time_format)]
+                    # next_prayer = [name, convert_time(timings[name], convert_from, wanted_time_format)] # if including lastthird
+
+            print(f'{next_prayer[0]} {next_prayer[1]}')
 
 if args.date:
-    athan("date")
+    athan(r="date")
 elif args.time:
-    athan("prayer_time")
+    athan(r="prayer_time")
+elif args.salah:
+    athan(salah=args.salah)
 else:
     print('Usage: check-athan')
     print(args)

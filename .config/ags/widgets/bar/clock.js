@@ -38,7 +38,7 @@ const BarHijri = () => Widget.Box({
     children: [
         Widget.Label({
             className: 'txt-smallie',
-            connections: [[50000, (label) => execAsync(['check-athan', '-d'])
+            connections: [[5000, (label) => execAsync(['check-athan', '-d'])
                 .then((output) => {
                     label.label = output;
                 }).catch(print)

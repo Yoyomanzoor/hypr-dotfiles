@@ -1,48 +1,147 @@
 const { Gdk, Gtk } = imports.gi;
 import { Service, Widget } from '../../imports.js';
 const { Box, EventBox, Icon, Scrollable, Label, Button, Revealer } = Widget;
+const { execAsync } = Utils;
 import { setupCursorHover } from "../../lib/cursorhover.js";
+import { MaterialIcon } from '../../lib/materialicon.js';
 // import { showPrayerTimes } from '../../variables.js';
 
-const prayers = () => Widget.Box({
+const timerr = 100000000;
+
+const prayers = () => Box({
     vertical: true,
     className: "cheatsheet-bg spacing-v-15",
     // className: "spacing-v-15",
-    homogeneous: true,
+    homogeneous: false,
     children: [
-        Widget.Label({
+        Label({
             className: "txt txt-title",
-            label: "Prayers",
+            label: "الصلاة",
         }),
-        Widget.Box({
+        Box({
+            vertical: true,
             homogeneous: true,
             children: [
-                Widget.Label({
-                    className: "txt txt-small",
-                    label: "Fajr",
+                Box({
+                    vertical: false,
+                    homogeneous: true,
+                    children: [
+                        Label({
+                            className: "txt txt-small",
+                            connections: [[timerr, (label) => execAsync(['check-athan', '-s', 'fajr'])
+                                .then((output) => {
+                                    label.label = output;
+                                }).catch(print)
+                            ]],
+                        }),
+                        MaterialIcon('wb_twilight', 'small'),
+                        Label({
+                            className: "txt txt-small",
+                            label: "الفجر",
+                        }),
+                    ],
                 }),
-                Widget.Label({
-                    className: "txt txt-small",
-                    label: "Dhuhr",
+                Box({
+                    vertical: false,
+                    homogeneous: true,
+                    children: [
+                        Label({
+                            className: "txt txt-small",
+                            connections: [[timerr, (label) => execAsync(['check-athan', '-s', 'sunrise'])
+                                .then((output) => {
+                                    label.label = output;
+                                }).catch(print)
+                            ]],
+                        }),
+                        MaterialIcon('water_lux', 'small'),
+                        Label({
+                            className: "txt txt-small",
+                            label: "الشروق",
+                        }),
+                    ],
                 }),
-                Widget.Label({
-                    className: "txt txt-small",
-                    label: "Asr",
+                Box({
+                    vertical: false,
+                    homogeneous: true,
+                    children: [
+                        Label({
+                            className: "txt txt-small",
+                            connections: [[timerr, (label) => execAsync(['check-athan', '-s', 'dhuhr'])
+                                .then((output) => {
+                                    label.label = output;
+                                }).catch(print)
+                            ]],
+                        }),
+                        MaterialIcon('sunny', 'small'),
+                        Label({
+                            className: "txt txt-small",
+                            label: "الظهر",
+                        }),
+                    ],
                 }),
-                Widget.Label({
-                    className: "txt txt-small",
-                    label: "Maghrib",
+                Box({
+                    vertical: false,
+                    homogeneous: true,
+                    children: [
+                        Label({
+                            className: "txt txt-small",
+                            connections: [[timerr, (label) => execAsync(['check-athan', '-s', 'asr'])
+                                .then((output) => {
+                                    label.label = output;
+                                }).catch(print)
+                            ]],
+                        }),
+                        MaterialIcon('flare', 'small'),
+                        Label({
+                            className: "txt txt-small",
+                            label: "العصر",
+                        }),
+                    ],
                 }),
-                Widget.Label({
-                    className: "txt txt-small",
-                    label: "Isha",
+                Box({
+                    vertical: false,
+                    homogeneous: true,
+                    children: [
+                        Label({
+                            className: "txt txt-small",
+                            connections: [[timerr, (label) => execAsync(['check-athan', '-s', 'maghrib'])
+                                .then((output) => {
+                                    label.label = output;
+                                }).catch(print)
+                            ]],
+                        }),
+                        MaterialIcon('wb_twilight', 'small'),
+                        Label({
+                            className: "txt txt-small",
+                            label: "المغرب",
+                        }),
+                    ],
+                }),
+                Box({
+                    vertical: false,
+                    homogeneous: true,
+                    children: [
+                        Label({
+                            className: "txt txt-small",
+                            connections: [[timerr, (label) => execAsync(['check-athan', '-s', 'isha'])
+                                .then((output) => {
+                                    label.label = output;
+                                }).catch(print)
+                            ]],
+                        }),
+                        MaterialIcon('dark_mode', 'small'),
+                        Label({
+                            className: "txt txt-small",
+                            label: "العشاء",
+                        }),
+                    ],
                 }),
             ]
         }),
     ],
 });
 
-const clickOutsideToClose = Widget.EventBox({
+const clickOutsideToClose = EventBox({
     onPrimaryClick: () => App.closeWindow('prayertimes'),
     onSecondaryClick: () => App.closeWindow('prayertimes'),
     onMiddleClick: () => App.closeWindow('prayertimes'),
@@ -59,10 +158,10 @@ export default () => Widget.Window({
     layer: 'overlay',
     margin: [0, 6],
     // monitor: 0,
-    child: Widget.Box({
+    child: Box({
         css: 'padding: 1px;',
         children: [
-            Widget.Revealer({
+            Revealer({
                 reveal_child: false,
                 child: prayers(),
                 setup: self => Utils.timeout(10, () => {
