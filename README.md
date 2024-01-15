@@ -17,6 +17,39 @@
 - IDE: nvim, vscode, rstudio
 - dmenu: ags, anyrun, ags
 
+## Installation (not yet tested)
+
+I plan on testing install on VMs, but for now, taken from end-4:
+
+Install packages, add user to input and video groups
+
+```bash
+yay -S blueberry brightnessctl coreutils curl fish foot fuzzel gjs gnome-bluetooth-3.0 gnome-control-center gnome-keyring gobject-introspection grim gtk3 gtk-layer-shell libdbusmenu-gtk3 meson networkmanager npm plasma-browser-integration playerctl polkit-gnome python-pywal ripgrep sassc slurp starship swayidle typescript upower xorg-xrandr webp-pixbuf-loader wget wireplumber wl-clipboard tesseract yad ydotool adw-gtk3-git cava gojq gradience-git hyprland-git hyprpicker-git lexend-fonts-git python-material-color-utilities python-pywal python-poetry python-build python-pillow swww ttf-material-symbols-variable-git ttf-space-mono-nerd swaylock-effects-git ttf-jetbrains-mono-nerd wayland-idle-inhibitor-git wlogout wlsunset-git
+sudo usermod -aG video $(whoami)  # if this somehow doesn't work, just replace "$(whoami)" with your username
+sudo usermod -aG input $(whoami)  # same for this
+```
+
+Install AGS from source, AUR is not up to date
+
+```bash
+cd ~/Downloads   # Let's not trash your home folder
+git clone --recursive https://github.com/Aylur/ags.git
+cd ags
+npm install
+meson setup build
+meson install -C build   # When asked to use sudo, make sure you say yes
+```
+
+clone and checkout dotfiles
+
+```bash
+cd ~/Downloads   # Let's not trash your home folder
+git clone https://github.com/Yoyomanzoor/hypr-dotfiles.git
+cd dots-hyprland && git checkout hypr
+```
+
+copy dots to home directory (make a backup!)
+
 ## Backing up dotfiles
 
 From [this link](https://www.atlassian.com/git/tutorials/dotfiles).
