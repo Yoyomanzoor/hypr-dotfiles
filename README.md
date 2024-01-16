@@ -19,14 +19,28 @@
 
 ## Installation (not yet tested)
 
-I plan on testing install on VMs, but for now, taken from end-4:
+Install Arch<br>
+In `archinstall`, these are the relevant settings:
+- Desktop: Hyprland (comes with a set of things)
+- Greeting: ly
+- Audio: Pipewire
+- Additional packages: git vim
 
-Install packages, add user to input and video groups
+Install packages, add user to input and video groups, install hy3
 
 ```bash
-yay -S blueberry brightnessctl coreutils curl fish foot fuzzel gjs gnome-bluetooth-3.0 gnome-control-center gnome-keyring gobject-introspection grim gtk3 gtk-layer-shell libdbusmenu-gtk3 meson networkmanager npm plasma-browser-integration playerctl polkit-gnome python-pywal ripgrep sassc slurp starship swayidle typescript upower xorg-xrandr webp-pixbuf-loader wget wireplumber wl-clipboard tesseract yad ydotool adw-gtk3-git cava gojq gradience-git hyprland-git hyprpicker-git lexend-fonts-git python-material-color-utilities python-pywal python-poetry python-build python-pillow swww ttf-material-symbols-variable-git ttf-space-mono-nerd swaylock-effects-git ttf-jetbrains-mono-nerd wayland-idle-inhibitor-git wlogout wlsunset-git
+yay -S blueberry brightnessctl coreutils curl fish foot fuzzel gjs gnome-bluetooth-3.0 gnome-control-center gnome-keyring gobject-introspection grim gtk3 gtk-layer-shell libdbusmenu-gtk3 meson networkmanager npm plasma-browser-integration playerctl polkit-gnome ripgrep sassc slurp starship swayidle typescript upower xorg-xrandr webp-pixbuf-loader wget wireplumber wl-clipboard tesseract yad ydotool adw-gtk3-git cava gojq gradience-git hyprland-git hyprpicker-git lexend-fonts-git python-material-color-utilities python-pywal python-poetry python-build python-pillow swww ttf-material-symbols-variable-git ttf-space-mono-nerd swaylock-effects-git ttf-jetbrains-mono-nerd wayland-idle-inhibitor-git wlogout wlsunset-git fastfetch neovim find-the-command micromamba-bin
 sudo usermod -aG video $(whoami)  # if this somehow doesn't work, just replace "$(whoami)" with your username
 sudo usermod -aG input $(whoami)  # same for this
+hyprpm add https://github.com/outfoxxed/hy3
+hyprpm enable hy3
+```
+
+Change shell to fish
+
+```bash
+sudo chsh -s /usr/bin/fish
+chsh -s /usr/bin/fish
 ```
 
 Install AGS from source, AUR is not up to date
@@ -40,15 +54,17 @@ meson setup build
 meson install -C build   # When asked to use sudo, make sure you say yes
 ```
 
-clone and checkout dotfiles
+Clone and checkout dotfiles
 
 ```bash
 cd ~/Downloads   # Let's not trash your home folder
 git clone https://github.com/Yoyomanzoor/hypr-dotfiles.git
-cd dots-hyprland && git checkout hypr
+cd hypr-dotfiles && git checkout hyprland
 ```
 
-copy dots to home directory (make a backup!)
+Copy dots to home directory (make a backup!)
+
+Restart the machine and it should all be working!
 
 ## Backing up dotfiles
 
