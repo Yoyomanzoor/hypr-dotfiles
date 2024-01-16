@@ -44,6 +44,13 @@ const cheatsheetHeader = () => Widget.CenterBox({
                 className: 'txt-small txt',
                 label: 'Sheet data stored in <tt>~/.config/ags/data/keybinds.js</tt>\nChange keybinds in <tt>~/.config/hypr/keybinds.conf</tt>'
             }),
+            Widget.Label({
+                useMarkup: true,
+                selectable: true,
+                justify: Gtk.Justification.CENTER,
+                className: 'txt-small txt',
+                label: 'All arrows can be replaced with vim directions: ←↓↑→ = hjkl'
+            }),
         ]
     }),
     endWidget: Widget.Button({
