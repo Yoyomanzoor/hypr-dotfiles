@@ -16,7 +16,7 @@ alias untar 'tar -zxvf'
 
 alias vim 'nvim'
 
-alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias home '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 starship init fish | source
 
