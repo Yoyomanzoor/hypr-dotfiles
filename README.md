@@ -29,7 +29,7 @@ In `archinstall`, these are the relevant settings:
 Install packages, add user to input and video groups, install hy3
 
 ```bash
-yay -S blueberry brightnessctl coreutils curl fish foot fuzzel gjs gnome-bluetooth-3.0 gnome-control-center gnome-keyring gobject-introspection grim gtk3 gtk-layer-shell libdbusmenu-gtk3 meson networkmanager npm plasma-browser-integration playerctl polkit-gnome ripgrep sassc slurp starship swayidle typescript upower xorg-xrandr webp-pixbuf-loader wget wireplumber wl-clipboard tesseract yad ydotool adw-gtk3-git cava gojq gradience-git hyprland-git hyprpicker-git lexend-fonts-git python-material-color-utilities python-pywal python-poetry python-build python-pillow swww ttf-material-symbols-variable-git ttf-space-mono-nerd swaylock-effects-git ttf-jetbrains-mono-nerd wayland-idle-inhibitor-git wlogout wlsunset-git fastfetch neovim find-the-command micromamba-bin eza rsync pavucontrol alacritty thunar anyrun swappy bat sysstat
+yay -S coreutils meson sysstat curl wget upower brightnessctl wireplumber blueberry rsync bat less fzf eza anyrun swappy grim fish fuzzel kitty alacritty foot thunar gjs gnome-bluetooth-3.0 gnome-control-center gnome-keyring gradience-git pavucontrol gobject-introspection gojq gtk3 gtk-layer-shell libdbusmenu-gtk3 networkmanager npm plasma-browser-integration playerctl polkit-gnome ripgrep sassc slurp starship swayidle typescript xorg-xrandr webp-pixbuf-loader wl-clipboard tesseract yad ydotool adw-gtk3-git cava hyprland-git hyprpicker-git python-material-color-utilities python-pywal python-poetry python-build python-pillow swww swaylock-effects-git wayland-idle-inhibitor-git wlogout wlsunset-git fastfetch neovim find-the-command micromamba-bin wf-recorder wps-office ttf-wps-fonts lexend-fonts-git ttf-material-symbols-variable-git ttf-space-mono-nerd ttf-jetbrains-mono-nerd
 sudo usermod -aG video $(whoami)  # if this somehow doesn't work, just replace "$(whoami)" with your username
 sudo usermod -aG input $(whoami)  # same for this
 hyprpm add https://github.com/outfoxxed/hy3
@@ -98,7 +98,20 @@ home remote -v
 home push origin main #or whatever branch
 ```
 
-## Random thoughts
+## Random thoughts/FAQ
+
+### Networking
+
+Generally, the gnome interface (via the sidebar) works fine. Sometimes, it acts weird, so I suggest using `nm-applet` in those cases. In a terminal, run
+
+```bash
+nm-applet &; disown
+```
+
+The icon will show in the bar and you can set up your WiFi accordingly.<br>
+Once a WiFi network is setup, NetworkManager should automatically connect to it and you shouldn't have problems using the gnome interface/sidebar to connect.
+
+I have not had issues using the gnome settings manager for connecting bluetooth devices.
 
 ### How making a widget works
 
