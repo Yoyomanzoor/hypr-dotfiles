@@ -144,7 +144,7 @@ def quran():
     data = json.loads(html)
     l = data['data']['text'].split(' ')
     n = 15
-    output = '\n'.join([' '.join(l[i:i + n]) for i in range(0, len(l), n)]) + f"{data['data']['surah']['name']} {arabnum(str(data['data']['surah']['number']))}"
+    output = '\n'.join([' '.join(l[i:i + n]) for i in range(0, len(l), n)]) + f"{data['data']['surah']['name']} {arabnum(str(data['data']['numberInSurah']))}"
     return output
     
 
