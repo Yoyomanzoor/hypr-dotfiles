@@ -12,16 +12,16 @@ const timerr = 86400000;
 
 const prayers = () => Box({
     vertical: true,
-    className: "prayertimes-bg spacing-v-10",
+    className: "cheatsheet-bg spacing-v-10",
     // className: "spacing-v-15",
     homogeneous: false,
     children: [
         Label({
-            className: "txt txt-hugerass-arabic",
+            className: "txt txt-hugerass-arabic spacing-v-15",
             label: "الصلاة",
         }),
         Label({
-            className: "txt-semibold txt-hugeass-arabic prayertimes-font",
+            className: "txt-semibold txt-hugeass-arabic",
             connections: [[timerr, (label) => execAsync(['check-athan', '-q'])
                 .then((output) => {
                     label.label = output;
