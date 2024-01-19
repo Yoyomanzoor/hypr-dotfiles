@@ -5,6 +5,7 @@ import { App, Utils } from './imports.js';
 // Widgets
 import Bar from './widgets/bar/main.js';
 import Cheatsheet from './widgets/cheatsheet/main.js';
+import Vimsheet from './widgets/vimsheet/main.js';
 import PrayerTimes from './widgets/prayertimes/main.js';
 // import DesktopBackground from './widgets/desktopbackground/main.js';
 // import Dock from './widgets/dock/main.js';
@@ -48,6 +49,7 @@ export default {
         Overview(),
         Indicator(),
         Cheatsheet(),
+        Vimsheet(),
         PrayerTimes(),
         SideLeft(),
         SideRight(),

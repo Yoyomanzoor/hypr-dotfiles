@@ -21,7 +21,7 @@ const prayers = () => Box({
             label: "الصلاة",
         }),
         Label({
-            className: "txt-semibold txt-hugeass-arabic",
+            className: "txt-hugerass-arabic",
             connections: [[timerr, (label) => execAsync(['check-athan', '-q'])
                 .then((output) => {
                     label.label = output;
