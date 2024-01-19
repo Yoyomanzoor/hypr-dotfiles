@@ -33,11 +33,21 @@ $rounding_large: 1.705rem;
     font-family: "Gabarito", "Poppins", "Lexend", sans-serif;
 }
 
+@mixin titlefontarabic {
+    // Geometric sans-serif
+    font-family: "Amiri", "Scheherazade", serif;
+}
+
 @mixin mainfont {
     // Other clean sans-serif
     font-family: "Rubik", "Geist", "AR One Sans", "Reddit Sans", "Inter",
         "Roboto", "Ubuntu", "Noto Sans", sans-serif;
     // font-weight: 500;
+}
+
+@mixin arabicfont {
+    // Arabic font
+    font-family: "Amiri", "Scheherazade", serif;
 }
 
 @mixin icon-material {

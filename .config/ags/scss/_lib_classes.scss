@@ -39,6 +39,11 @@
     font-size: 2.045rem;
 }
 
+.txt-title-arabic {
+    @include titlefontarabic;
+    font-size: 2.045rem;
+}
+
 .txt-title-small {
     @include titlefont;
     font-size: 1.364rem;
@@ -75,6 +80,66 @@
 .txt-shadow {
     text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.69);
     margin: 10px;
+}
+
+.txt-badonkers-arabic {
+    @include arabicfont;
+    font-size: 3rem;
+}
+
+.txt-tiddies-arabic {
+    @include arabicfont;
+    font-size: 2.7273rem;
+}
+
+.txt-hugerass-arabic {
+    @include arabicfont;
+    font-size: 2.045rem;
+}
+
+.txt-hugeass-arabic {
+    @include arabicfont;
+    font-size: 1.8182rem;
+}
+
+.txt-larger-arabic {
+    @include arabicfont;
+    font-size: 1.6363rem;
+}
+
+.txt-large-arabic {
+    //16pt
+    @include arabicfont;
+    font-size: 1.4545rem;
+}
+
+.txt-norm-arabic {
+    //14pt
+    @include arabicfont;
+    font-size: 1.2727rem;
+}
+
+.txt-small-arabic {
+    //12pt
+    @include arabicfont;
+    font-size: 1.0909rem;
+}
+
+.txt-smallie-arabic {
+    //11pt
+    @include arabicfont;
+    font-size: 1rem;
+}
+
+.txt-smaller-arabic {
+    //10pt
+    @include arabicfont;
+    font-size: 0.9091rem;
+}
+
+.txt-tiny-arabic {
+    @include arabicfont;
+    font-size: 0.7273rem;
 }
 
 .txt-badonkers {

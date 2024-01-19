@@ -3,12 +3,13 @@
 # yoyomanzoor
 # Uses ipinfo.io to get location and then uses aladhan.com to get prayer times
 
-import os, sys, subprocess, argparse, urllib.request, json, datetime, time
+import os, sys, subprocess, argparse, urllib.request, json, datetime, time, random
 
 parser = argparse.ArgumentParser(description='Get prayer times')
 parser.add_argument('-n', '--notify', action='store_true', help='Send notification for next prayer time')
 parser.add_argument('-d', '--date', action='store_true', help='Get date')
 parser.add_argument('-t', '--time', action='store_true', help='Get time')
+parser.add_argument('-q', '--quran', action='store_true', help='Get Quran verse of the day')
 parser.add_argument('-s', '--salah', metavar='SALAH', type=str, default='fajr', help='return time for today for SALAH. SALAH can be fajr, sunrise, dhuhr, asr, maghrib, or isha')
 if len(sys.argv) == 1:
     parser.print_help(sys.stderr)
@@ -65,20 +66,25 @@ def convert_time(time, convert_from, convert_to):
 
 def notify():
     # send notification, to be called by ags once at startup
+    def update():
+        data, data_today = initialize()
+        timings = {k:v.split(' ')[0] for k,v in data_today['timings'].items()}
+        del timings['Sunset']
+        del timings['Imsak']
+        del timings['Midnight']
+        del timings['Firstthird']
+        del timings['Lastthird']
+        timingsInverse = {v:k for k,v in timings.items()}
+        return timingsInverse
 
-    data, data_today = initialize()
-    timings = {k:v.split(' ')[0] for k,v in data_today['timings'].items()}
-    del timings['Sunset']
-    del timings['Imsak']
-    del timings['Midnight']
-    del timings['Firstthird']
-    del timings['Lastthird']
-    timingsInverse = {v:k for k,v in timings.items()}
     while True:
-        current_time = datetime.datetime.now().strftime('%H:%M')
-        if current_time in list(timingsInverse):
-            subprocess.run(f'notify-send {timingsInverse[current_time]} -i mosque', shell=True)
-        time.sleep(60)
+        tI = update()
+        while i<60*23: # refresh every 23 hours to get next day's timings
+            i+=1
+            current_time = datetime.datetime.now().strftime('%H:%M')
+            if current_time in list(tI):
+                subprocess.run(f'notify-send {tI[current_time]} -i mosque', shell=True)
+            time.sleep(60)
 
 def athan(salah=None, r=None):
     # main function
@@ -129,11 +135,26 @@ def athan(salah=None, r=None):
 
             print(f'{next_prayer[0]} {next_prayer[1]}')
 
+def quran():
+    # get quran verse of the day
+    url = f'http://api.alquran.cloud/v1/ayah/{random.randint(1, 6236)}'
+    # url = f'http://api.alquran.cloud/v1/ayah/289'
+    with urllib.request.urlopen(url) as response:
+        html = response.read()
+    data = json.loads(html)
+    l = data['data']['text'].split(' ')
+    n = 15
+    output = '\n'.join([' '.join(l[i:i + n]) for i in range(0, len(l), n)]) + f"{data['data']['surah']['name']} {arabnum(str(data['data']['surah']['number']))}"
+    return output
+    
+
 if args.date:
     athan(r="date")
 elif args.time:
     athan(r="prayer_time")
 elif args.notify:
     notify()
+elif args.quran:
+    print(quran())
 else:
     athan(salah=args.salah)

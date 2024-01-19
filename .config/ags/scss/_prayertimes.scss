@@ -1,4 +1,4 @@
-.cheatsheet-bg {
+.prayertimes-bg {
     @include large-rounding;
     @include elevation-border;
     @include elevation2;
@@ -7,8 +7,7 @@
     padding: 1.364rem;
 }
 
-.cheatsheet-key {
-    @include techfont;
+.prayertimes-key {
     min-height: 1.364rem;
     min-width: 1.364rem;
     margin: 0.17rem;
@@ -21,7 +20,11 @@
     font-weight: 500;
 }
 
-.cheatsheet-key-notkey {
+.prayertimes-font {
+    @include fontarabic;
+    color: $primary;
+
+.prayertimes-key-notkey {
     min-height: 1.364rem;
     padding: 0.136rem 0.205rem;
     margin: 0.17rem;
@@ -30,23 +33,7 @@
 
 // .cheatsheet-action {}
 
-.cheatsheet-closebtn {
-    @include menu_decel;
-    @include full-rounding;
-    min-width: 2.386rem;
-    min-height: 2.386rem;
-}
-
-.cheatsheet-closebtn:hover,
-.cheatsheet-closebtn:focus {
-    background-color: $hovercolor;
-}
-
-.cheatsheet-closebtn:active {
-    background-color: $activecolor;
-}
-
-.cheatsheet-category-title {
-    @include titlefont;
+.prayertimes-category-title {
+    @include titlefontarabic;
     font-size: 1.705rem;
 }
