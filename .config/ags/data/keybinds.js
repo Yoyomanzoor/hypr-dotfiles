@@ -95,6 +95,7 @@ export const keybindList = [[
         "binds": [
             { "keys": ["", "+", "\\"], "action": "Toggle all keybinds" },
             { "keys": ["Ctrl", "Alt", "Shift", "+", "L"], "action": "Lock screen and suspend" },
+            { "keys": ["", "+", "P"], "action": "Display settins GUI" },
         ],
         "appeartick": 2
     },
