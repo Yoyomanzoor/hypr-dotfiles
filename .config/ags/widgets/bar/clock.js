@@ -12,6 +12,17 @@ const BarClock = () => Widget.Box({
     className: 'spacing-h-5 txt-onSurfaceVariant bar-clock-box',
     children: [
         Widget.Label({
+            className: 'txt-smallie',
+            label: GLib.DateTime.new_now_local().format("%A, %m/%d"),
+            setup: (self) => self.poll(5000, label => {
+                label.label = GLib.DateTime.new_now_local().format("%A, %m/%d");
+            }),
+        }),
+        Widget.Label({
+            className: 'txt-norm',
+            label: '•',
+        }),
+        Widget.Label({
             className: 'bar-clock',
             label: GLib.DateTime.new_now_local().format("%I:%M %p"),
             setup: (self) => self.poll(5000, label => {
@@ -24,10 +35,12 @@ const BarClock = () => Widget.Box({
         }),
         Widget.Label({
             className: 'txt-smallie',
-            label: GLib.DateTime.new_now_local().format("%A, %m/%d"),
-            setup: (self) => self.poll(5000, label => {
-                label.label = GLib.DateTime.new_now_local().format("%A, %m/%d");
-            }),
+            // className: 'txt-smallie-arabic', // for amiri font
+            connections: [[5000, (label) => execAsync(['check-athan', '-d'])
+                .then((output) => {
+                    label.label = output;
+                }).catch(print)
+            ]],
         }),
     ],
 });
@@ -65,7 +78,7 @@ export const ModuleClock = () => Widget.EventBox({
         className: 'spacing-h-5',
         children: [
             BarGroup({ child: BarClock() }),
-            BarGroup({ child: BarHijri() }),
+            // BarGroup({ child: BarHijri() }),
         ]
     })
 });
