@@ -16,10 +16,10 @@ const prayers = () => Box({
     // className: "spacing-v-15",
     homogeneous: false,
     children: [
-        Label({
-            className: "txt txt-hugerass-arabic spacing-v-15",
-            label: "الصلاة",
-        }),
+        // Label({
+        //     className: "txt txt-hugerass-arabic spacing-v-15",
+        //     label: "الصلاة",
+        // }),
         Label({
             className: "txt-hugerass-arabic",
             connections: [[timerr, (label) => execAsync(['check-athan', '-q'])

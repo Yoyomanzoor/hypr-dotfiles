@@ -1,9 +1,9 @@
 ## TODO
 
 - [ ] Replace the waifu thing with a prayer time widget
-- [ ] Remake the Quran thing from KDE setup to sidebar
+- [x] Remake the Quran thing from KDE setup to sidebar
 - [ ] Fix mpv so ytfzf shows in media bar
-- [ ] Update hint tooltip for both hyprland and nvim
+- [x] Update hint tooltip for both hyprland and nvim
 - [x] Prayer times in top bar
 - [x] Update color changing script to include other tools, like `alacritty`, 
 
@@ -147,5 +147,14 @@ Cause of a) no easy documentation for its toml files (they recently switched fro
 ### Foot has gotten the boot
 
 Fun terminal, but the fact that I can't figure out `Ctrl C` is not okay
+
+### Discord
+
+Steps to make Discord work with pywal
+- install `pywal-discord' from aur
+- install BetterDiscord-Installer from aur
+- run `betterdiscord-installer`
+- run `pywal-discord -t default` to update discord to the current pywal theme
+- in discord, turn on the theme
 
 

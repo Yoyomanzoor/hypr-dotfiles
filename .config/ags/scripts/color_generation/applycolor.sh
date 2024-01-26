@@ -127,6 +127,26 @@ apply_kitty() {
     done
 }
 
+kitty-reload() {
+    for pid in $(pidof kitty); do
+        kill -SIGUSR1 "$pid"
+    done
+}
+
+apply_cava() {
+    # Check if scripts/templates/cava/config exists
+    if [ ! -f "scripts/templates/cava/config" ]; then
+        echo "Template file not found for Cava. Skipping that."
+        return
+    fi
+    # Copy template
+    cp "scripts/templates/cava/config" "$HOME/.config/cava/config"
+    # Apply colors
+    for i in "${!colorlist[@]}"; do
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/cava/config" 
+    done
+}
+
 apply_hyprland() {
     # Check if scripts/templates/hypr/colors.conf exists
     if [ ! -f "scripts/templates/hypr/colors.conf" ]; then
@@ -175,6 +195,10 @@ apply_ags() {
     ags run-js "App.resetCss(); App.applyCss('${HOME}/.config/ags/style.css');"
 }
 
+apply_discord() {
+    pywal-discord -t default
+}
+
 # apply_svgs
 apply_ags &
 apply_hyprland &
@@ -183,4 +207,7 @@ apply_gtklock &
 apply_fuzzel &
 apply_foot &
 apply_alacritty &
-apply_kitty
+apply_kitty &
+kitty-reload &
+apply_cava &
+apply_discord
