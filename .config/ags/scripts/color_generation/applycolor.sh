@@ -125,12 +125,9 @@ apply_kitty() {
     for i in "${!colorlist[@]}"; do
         sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/kitty/kitty.conf" 
     done
-}
 
-kitty-reload() {
-    for pid in $(pidof kitty); do
-        kill -SIGUSR1 "$pid"
-    done
+    # Reload kitty conf, assuming kitty is running in single instance mode
+    kill -SIGUSR1 $(pidof kitty)
 }
 
 apply_cava() {
@@ -208,6 +205,5 @@ apply_fuzzel &
 apply_foot &
 apply_alacritty &
 apply_kitty &
-kitty-reload &
 apply_cava &
 apply_discord

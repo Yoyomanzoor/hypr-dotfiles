@@ -155,6 +155,6 @@ Steps to make Discord work with pywal
 - install BetterDiscord-Installer from aur
 - run `betterdiscord-installer`
 - run `pywal-discord -t default` to update discord to the current pywal theme
-- in discord, turn on the theme
+- in discord, go to discord settings and turn on the theme
 
 
