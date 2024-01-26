@@ -196,6 +196,26 @@ apply_discord() {
     pywal-discord -t default
 }
 
+apply_firefox() {
+    pywalfox update
+
+    # Check if scripts/templates/firefox/userChrome.css exists
+    if [ ! -f "scripts/templates/firefox/userChrome.css" ]; then
+        echo "Template file not found for firefox colors. Skipping that."
+        return
+    fi
+    # Copy template
+    cp "scripts/templates/firefox/userChrome.css" "$HOME/.mozilla/firefox/cp2d5tn2.default-release/chrome/userChrome.css"
+    # Apply colors
+    for i in "${!colorlist[@]}"; do
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.mozilla/firefox/cp2d5tn2.default-release/chrome/userChrome.css"
+    done
+}
+
+apply_qutebrowser() {
+    qutebrowser :config-source
+}
+
 # apply_svgs
 apply_ags &
 apply_hyprland &
@@ -206,4 +226,5 @@ apply_foot &
 apply_alacritty &
 apply_kitty &
 apply_cava &
-apply_discord
+apply_discord &
+apply_qutebrowser
