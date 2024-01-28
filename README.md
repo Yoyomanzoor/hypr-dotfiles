@@ -1,3 +1,7 @@
+# Hyperland Dotfiles
+
+This project was forked from [end-4 illogical impulse](https://github.com/end-4/dots-hyprland/tree/illogical-impulse)
+
 ## TODO
 
 - [ ] Replace the waifu thing with a prayer time widget
@@ -8,8 +12,6 @@
 - [x] Update color changing script to include other tools, like `alacritty`, 
 
 ## Setup
-
-[OG](https://github.com/end-4/dots-hyprland/tree/illogical-impulse)
 
 - Arch running hypr
 - Terminal: foot, alacritty, kitty
@@ -58,8 +60,8 @@ Clone and checkout dotfiles
 
 ```bash
 cd ~/Downloads   # Let's not trash your home folder
-git clone https://github.com/Yoyomanzoor/hypr-dotfiles.git
-cd hypr-dotfiles && git checkout hyprland
+git clone https://github.com/Yoyomanzoor/dotfiles.git
+cd dotfiles && git checkout hyprland
 ```
 
 Copy dots to home directory (make a backup!)
@@ -100,19 +102,6 @@ home push origin main #or whatever branch
 
 ## Random thoughts/FAQ
 
-### Networking
-
-Generally, the gnome interface (via the sidebar) works fine. Sometimes, it acts weird, so I suggest using `nm-applet` in those cases. In a terminal, run
-
-```bash
-nm-applet &; disown
-```
-
-The icon will show in the bar and you can set up your WiFi accordingly.<br>
-Once a WiFi network is setup, NetworkManager should automatically connect to it and you shouldn't have problems using the gnome interface/sidebar to connect.
-
-I have not had issues using the gnome settings manager for connecting bluetooth devices.
-
 ### How making a widget works
 
 Everying is containerized, and documentation for arguments they can take are [here](https://aylur.github.io/ags-docs/config/widgets/).
@@ -132,19 +121,44 @@ The way color schemes work is via the script `$HOME/.config/ags/scripts/color_ge
 
 To apply the config edited by `ags`, the config could either be copied over to the application's config directory or the application can have it's config symlinked to ags. I'm sticking with the former at the moment. The advantage to the latter is that all of the configs for every application managed by `ags` could theoretically be placed in a single location for simpler organization.
 
-### Arabic in terminals
+### Networking
+
+Generally, the gnome interface (via the sidebar) works fine. Sometimes, it acts weird, so I suggest using `nm-applet` in those cases. In a terminal, run
+
+```bash
+nm-applet &; disown
+```
+
+The icon will show in the bar and you can set up your WiFi accordingly.<br>
+Once a WiFi network is setup, NetworkManager should automatically connect to it and you shouldn't have problems using the gnome interface/sidebar to connect.
+
+For bluetooth, you can use `blueman-applet` if needed.
+
+### Terminals
+
+#### Arabic in terminals
 
 No terminal is great for bidi support. Konsole might be the best, but it does not have an easy text file configuration - configuration is done via GUI. Kitty is a good runner up. Plus Kitty has awesome [documentation](https://sw.kovidgoyal.net/kitty/conf/).
 
-_Update_: A problem with kitty and pywal is that kitty can't update config without closing and reopening or pressing ctrl+shift+Fn5 on the kitty window or the kitty command in the active window `kitty @`. I tried using the option `--single-instance` with remote access but that still doesn't work. Basically, all the open terminals can't be reloaded at once from an external command. It looks like there are no plans for kitty to support this. Alacritty, on the other hand, has no problem adjusting to config reloads.
+#### Kitty
 
-### Alacritty was alalitty but now is ala-not-as-good-as-kitty
+Kitty is great cause of its config setup and documentation (above), and it has cool features.
+
+_Update_: A problem with kitty and pywal is that kitty can't update config without closing and reopening or pressing ctrl+shift+Fn5 on the kitty window or the kitty command in the active window `kitty @`. I tried using the option `--single-instance` with remote access but that still doesn't work. Basically, all the open terminals can't be reloaded at once from an external command. It looks like there are no plans for kitty to support this. Alacritty, on the other hand, has no problem with config reloads.
+
+#### Alacritty was alalitty but now is ala-not-as-good-as-kitty
 
 Cause of a) no easy documentation for its toml files (they recently switched from yaml to toml) and b) no bidi
 
-### Foot has gotten the boot
+_Update_: Alacritty made a comeback. If I need to work in arabic, I would have to use vscode anyway, but for general purpose alacritty can refresh its config on the fly which makes it a better candidate for pywal + ags.
+
+#### Foot has gotten the boot
 
 Fun terminal, but the fact that I can't figure out `Ctrl C` is not okay
+
+### Display settings
+
+This uses nwg-displays to manage windows. Note that the window location should be placed at (0,0) for the ags overview window to show the workspace correctly, else there will be a lot of extra space on the overview page.
 
 ### Discord
 
