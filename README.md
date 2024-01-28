@@ -160,7 +160,7 @@ Steps to make Discord work with pywal
 - in discord, go to discord settings and turn on the theme
 
 ### Google Drive
-To setup google drive, follow [rclone instructions](https://rclone.org/drive/) and [setup a client ID](https://rclone.org/drive/#making-your-own-client-id).
+To setup google drive, follow [rclone instructions](https://rclone.org/drive/) and [setup a client ID](https://rclone.org/drive/#making-your-own-client-id). Make sure to call the remove `googledrive`.
 To enable on startup, create the script `/etc/systemd/system/rclone-drive.service`. Replace the `User` and `Group` with your user and group.
 
 ```desktop
