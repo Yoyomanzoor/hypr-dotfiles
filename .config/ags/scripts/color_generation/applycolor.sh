@@ -90,13 +90,11 @@ apply_foot() {
         return
     fi
     # Copy template
-    cp "scripts/templates/foot/foot.ini" "$HOME/.config/foot/foot_new.ini"
+    cp "scripts/templates/foot/foot.ini" "$HOME/.config/foot/foot.ini"
     # Apply colors
     for i in "${!colorlist[@]}"; do
-        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/foot/foot_new.ini" # note: ff because theyre opaque
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/foot/foot.ini" # note: ff because theyre opaque
     done
-
-    cp "$HOME/.config/foot/foot_new.ini" "$HOME/.config/foot/foot.ini"
 }
 
 apply_alacritty() {

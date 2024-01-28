@@ -130,11 +130,7 @@ The advantage to this: it can be opened via a command line ags call (`ags -t pra
 
 The way color schemes work is via the script `$HOME/.config/ags/scripts/color_generation/applycolor.sh`. Check `$HOME/.config/ags/scripts/color_generation/pywal_to_material.scss` and `$HOME/.config/ags/scripts/color_generation/specials/_material_badapple.scss` to get an idea of the colors available. They are set using a `sed` command.
 
-To edit configs for whatever is being edited by `ags`, there are two ways of doing this:
-- edit the file in the template folder `$HOME/.config/ags/scripts/templates/`
-- make the `applycolor.sh` script edit a file that is imported into the config file, if the tool allows this
-
-For now I'm sticking with the former, even if the latter is more elegant.
+To apply the config edited by `ags`, the config could either be copied over to the application's config directory or the application can have it's config symlinked to ags. I'm sticking with the former at the moment. The advantage to the latter is that all of the configs for every application managed by `ags` could theoretically be placed in a single location for simpler organization.
 
 ### Arabic in terminals
 
