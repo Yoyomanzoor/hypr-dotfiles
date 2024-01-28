@@ -6,7 +6,36 @@
 
 config_version: 2
 settings:
+  content.notifications.enabled:
+    https://www.youtube.com: true
+  fonts.default_family:
+    global: Gabarito
+  fonts.default_size:
+    global: 11pt
+  fonts.downloads:
+    global: default_size default_family
+  fonts.tooltip:
+    global: null
   scrolling.bar:
     global: when-searching
   scrolling.smooth:
     global: true
+  statusbar.position:
+    global: bottom
+  statusbar.show:
+    global: in-mode
+  statusbar.widgets:
+    global:
+    - keypress
+    - search_match
+    - url
+    - scroll
+    - history
+    - tabs
+    - progress
+  tabs.favicons.show:
+    global: always
+  tabs.indicator.width:
+    global: 3
+  tabs.mode_on_change:
+    global: restore

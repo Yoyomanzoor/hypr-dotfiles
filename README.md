@@ -140,6 +140,8 @@ For now I'm sticking with the former, even if the latter is more elegant.
 
 No terminal is great for bidi support. Konsole might be the best, but it does not have an easy text file configuration - configuration is done via GUI. Kitty is a good runner up. Plus Kitty has awesome [documentation](https://sw.kovidgoyal.net/kitty/conf/).
 
+_Update_: A problem with kitty and pywal is that kitty can't update config without closing and reopening or pressing ctrl+shift+Fn5 on the kitty window or the kitty command in the active window `kitty @`. I tried using the option `--single-instance` with remote access but that still doesn't work. Basically, all the open terminals can't be reloaded at once from an external command. It looks like there are no plans for kitty to support this. Alacritty, on the other hand, has no problem adjusting to config reloads.
+
 ### Alacritty was alalitty but now is ala-not-as-good-as-kitty
 
 Cause of a) no easy documentation for its toml files (they recently switched from yaml to toml) and b) no bidi
@@ -157,4 +159,32 @@ Steps to make Discord work with pywal
 - run `pywal-discord -t default` to update discord to the current pywal theme
 - in discord, go to discord settings and turn on the theme
 
+### Google Drive
+To setup google drive, follow [rclone instructions](https://rclone.org/drive/) and [setup a client ID](https://rclone.org/drive/#making-your-own-client-id).
+To enable on startup, create the script `/etc/systemd/system/rclone-drive.service`. Replace the `User` and `Group` with your user and group.
 
+```desktop
+[Unit]
+Description=RClone Google Drive mount
+After=network.target
+
+[Service]
+Type=simple
+User=yoyomanzoor
+Group=yoyomanzoor
+ExecStart=/opt/scripts/rclone-gdrive.sh
+
+[Install]
+WantedBy=default.target
+```
+
+Then create `/opt/scripts/rclone-gdrive.sh`
+
+```sh
+#!/usr/bin/bash
+
+mkdir -p $HOME/drive
+rclone mount googledrive: $HOME/drive/
+```
+
+Google drive should be mounted at `$HOME/drive` on startup for your user.
