@@ -192,6 +192,7 @@ apply_ags() {
 
 apply_discord() {
     pywal-discord -t default
+    pywal-discord -p /home/yoyomanzoor/.config/vesktop/themes/
 }
 
 apply_firefox() {
@@ -211,7 +212,35 @@ apply_firefox() {
 }
 
 apply_qutebrowser() {
-    qutebrowser :config-source
+    qutebrowser ':config-source'
+}
+
+apply_anki() {
+    # Check if scripts/templates/anki/1685464019/config.json exists
+    if [ ! -f "scripts/templates/anki/1685464019/config.json" ]; then
+        echo "Template file not found for Anki. Skipping that."
+        return
+    fi
+    # Copy template
+    cp "scripts/templates/anki/1685464019/config.json" "$HOME/.local/share/Anki2/addons21/1685464019/config.json"
+    # Apply colors
+    for i in "${!colorlist[@]}"; do
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.local/share/Anki2/addons21/1685464019/config.json"
+    done
+
+    # # Copy template
+    # cp "scripts/templates/anki/1210908941/custom_deckbrowser.css" "$HOME/.local/share/Anki2/addons21/1210908941/user_files/css/custom_deckbrowser.css"
+    # # Apply colors
+    # for i in "${!colorlist[@]}"; do
+    #     sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.local/share/Anki2/addons21/1210908941/user_files/css/custom_deckbrowser.css"
+    # done
+
+    # Copy template
+    cp "scripts/templates/anki/688199788/yoyo.json" "$HOME/.local/share/Anki2/addons21/688199788/themes/yoyo.json"
+    # Apply colors
+    for i in "${!colorlist[@]}"; do
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.local/share/Anki2/addons21/688199788/themes/yoyo.json"
+    done
 }
 
 # apply_svgs
@@ -225,4 +254,6 @@ apply_alacritty &
 apply_kitty &
 apply_cava &
 apply_discord &
-apply_qutebrowser
+apply_firefox &
+apply_qutebrowser &
+apply_anki
