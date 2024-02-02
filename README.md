@@ -28,7 +28,7 @@ In `archinstall`, these are the relevant settings:
 - Audio: Pipewire
 - Additional packages: git vim
 
-Install packages, add user to input and video groups, install hy3
+Install packages, add user to input and video groups, install `hy3`
 
 ```bash
 yay -S coreutils meson sysstat curl wget upower brightnessctl wireplumber blueberry rsync bat less fzf eza anyrun swappy grim fish fuzzel kitty alacritty foot thunar gjs gnome-bluetooth-3.0 gnome-control-center gnome-keyring gradience-git pavucontrol gobject-introspection gojq gtk3 gtk-layer-shell libdbusmenu-gtk3 networkmanager npm plasma-browser-integration playerctl polkit-gnome ripgrep sassc slurp starship swayidle typescript wlr-randr nwg-displays xorg-xrandr webp-pixbuf-loader wl-clipboard tesseract yad ydotool adw-gtk3-git cava hyprland-git hyprpicker-git python-material-color-utilities python-pywal python-poetry python-build python-pillow swww swaylock-effects-git wayland-idle-inhibitor-git wlogout wlsunset-git fastfetch neovim find-the-command micromamba-bin wf-recorder wps-office ttf-wps-fonts lexend-fonts-git ttf-material-symbols-variable-git ttf-space-mono-nerd ttf-jetbrains-mono-nerd ttf-amiri ttf-scheherazade-new
@@ -45,7 +45,7 @@ sudo chsh -s /usr/bin/fish
 chsh -s /usr/bin/fish
 ```
 
-Install AGS from source, AUR is not up to date
+Install `ags` from source, AUR is not up to date
 
 ```bash
 cd ~/Downloads   # Let's not trash your home folder
@@ -158,7 +158,7 @@ Fun terminal, but the fact that I can't figure out `Ctrl C` is not okay
 
 ### Display settings
 
-This uses nwg-displays to manage windows. Note that the window location should be placed at (0,0) for the ags overview window to show the workspace correctly, else there will be a lot of extra space on the overview page.
+This uses `nwg-displays` to manage windows. Note that the window location should be placed at (0,0) for the ags overview window to show the workspace correctly, else there will be a lot of extra space on the overview page.
 
 ### Discord
 
