@@ -11,7 +11,6 @@ end
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set fish_greeting
-
 end
 
 # Add ~/.local/bin to PATH
@@ -21,6 +20,12 @@ if test -d ~/.local/bin
    end
 end
 
+function fish_remove_path
+  if set -l index (contains -i "$argv" $fish_user_paths)
+    set -e fish_user_paths[$index]
+    echo "Removed $argv from the path"
+  end
+end
 
 alias ls 'eza -al --color=always --group-directories-first --icons' # preferred listing
 alias la 'eza -a --color=always --group-directories-first --icons'  # all files and dirs
@@ -104,13 +109,13 @@ function commit
    end
 end
 
-
+set -x GEM_HOME $HOME/.gems
 
 # dotfile version control
 alias home '/sbin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 ## Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.fish
+# source /usr/share/doc/find-the-command/ftc.fish
 
 # Fish command history
 function history

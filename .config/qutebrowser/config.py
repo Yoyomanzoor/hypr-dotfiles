@@ -2,7 +2,9 @@
 
 config.load_autoconfig()
 
-config.set("colors.webpage.darkmode.enabled", True)
+c.editor.command = ["alacritty", "-e", "nvim", "{}"]
+
+# config.set("colors.webpage.darkmode.enabled", True)
 
 # pywalQute.draw.color(c, {
 #     'spacing': {

@@ -145,6 +145,7 @@ set clipboard=unnamedplus
 :noremap tn :tabnew \| lua MiniStarter.open()<CR>
 :noremap t. :tabm +1 <CR>
 :noremap t, :tabm -1 <CR>
+:noremap <leader>r :lua MiniStarter.open()<CR>
 ":noremap vs :vsplit<CR>
 ":noremap hs :split<CR>
 

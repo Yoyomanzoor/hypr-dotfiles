@@ -31,7 +31,7 @@ In `archinstall`, these are the relevant settings:
 Install packages, add user to input and video groups, install `hy3`
 
 ```bash
-yay -S coreutils meson sysstat curl wget upower brightnessctl wireplumber blueberry rsync bat less fzf eza anyrun swappy grim fish fuzzel kitty alacritty foot thunar gjs gnome-bluetooth-3.0 gnome-control-center gnome-keyring gradience-git pavucontrol gobject-introspection gojq gtk3 gtk-layer-shell libdbusmenu-gtk3 networkmanager npm plasma-browser-integration playerctl polkit-gnome ripgrep sassc slurp starship swayidle typescript wlr-randr nwg-displays xorg-xrandr webp-pixbuf-loader wl-clipboard tesseract yad ydotool adw-gtk3-git cava hyprland-git hyprpicker-git python-material-color-utilities python-pywal python-poetry python-build python-pillow swww swaylock-effects-git wayland-idle-inhibitor-git wlogout wlsunset-git fastfetch neovim find-the-command micromamba-bin wf-recorder wps-office ttf-wps-fonts lexend-fonts-git ttf-material-symbols-variable-git ttf-space-mono-nerd ttf-jetbrains-mono-nerd ttf-amiri ttf-scheherazade-new
+yay -S coreutils meson sysstat curl wget upower brightnessctl wireplumber blueberry rsync bat less fzf eza anyrun swappy grim fish fuzzel kitty alacritty foot thunar gjs gnome-bluetooth-3.0 gnome-control-center gnome-keyring gradience-git pavucontrol gobject-introspection gojq gtk3 gtk-layer-shell libdbusmenu-gtk3 networkmanager npm plasma-browser-integration playerctl polkit-gnome ripgrep sassc slurp starship swayidle typescript wlr-randr nwg-displays xorg-xrandr webp-pixbuf-loader wl-clipboard tesseract yad ydotool adw-gtk3-git cava hyprland-git hyprpicker-git python-material-color-utilities python-pywal python-poetry python-build python-pillow swww mpvpaper swaylock-effects-git wayland-idle-inhibitor-git wlogout wlsunset-git fastfetch neovim find-the-command micromamba-bin wf-recorder wps-office ttf-wps-fonts lexend-fonts-git ttf-material-symbols-variable-git ttf-space-mono-nerd ttf-jetbrains-mono-nerd ttf-amiri ttf-scheherazade-new
 sudo usermod -aG video $(whoami)  # if this somehow doesn't work, just replace "$(whoami)" with your username
 sudo usermod -aG input $(whoami)  # same for this
 hyprpm add https://github.com/outfoxxed/hy3
@@ -168,6 +168,10 @@ Steps to make Discord work with pywal
 - run `betterdiscord-installer`
 - run `pywal-discord -t default` to update discord to the current pywal theme
 - in discord, go to discord settings and turn on the theme
+
+Can also use `Vesktop`, update pywal command with
+
+`pywal-discord -p $HOME/.config/vesktop/themes/`
 
 ### Google Drive
 To setup google drive, follow [rclone instructions](https://rclone.org/drive/) and [setup a client ID](https://rclone.org/drive/#making-your-own-client-id). Make sure to call the remove `googledrive`.

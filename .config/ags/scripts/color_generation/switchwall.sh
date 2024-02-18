@@ -2,6 +2,11 @@
 # Switches sww wallpaper
 # Requires: coreutils, xrandr, hyprland
 
+# check if swww-daemon is running
+if ! pidof swww-daemon; then
+    swww init
+fi
+
 if [ "$1" == "--noswitch" ]; then
     imgpath=$(swww query | awk -F 'image: ' '{print $2}')
 else
@@ -18,11 +23,22 @@ else
         exit 0
     fi
 
-    echo Sending "$imgpath" to swww. Cursor pos: ["$cursorposx, $cursorposy_inverted"]
-    # Change swww wallpaper
-    swww img "$imgpath" --transition-step 100 --transition-fps 60 \
-    --transition-type grow --transition-angle 30 --transition-duration 1 \
-    --transition-pos "$cursorposx, $cursorposy_inverted"
+    if [[ "$imgpath" == *.mp4 ]] || [[ "$imgpath" == *.mov ]]; then
+        echo Sending "$imgpath" to mpvpaper.
+        # Change mpvpaper wallpaper
+        mpvpaper -o "--no-audio --loop" '*' "$imgpath"
+        exit 0
+    else
+        if pidof mpvpaper; then
+            echo Killing mpvpaper
+            killall mpvpaper
+        fi
+        echo Sending "$imgpath" to swww. Cursor pos: ["$cursorposx, $cursorposy_inverted"]
+        # Change swww wallpaper
+        swww img "$imgpath" --transition-step 100 --transition-fps 60 \
+        --transition-type grow --transition-angle 30 --transition-duration 1 \
+        --transition-pos "$cursorposx, $cursorposy_inverted"
+    fi
 fi
 
 # Generate colors for ags n stuff
