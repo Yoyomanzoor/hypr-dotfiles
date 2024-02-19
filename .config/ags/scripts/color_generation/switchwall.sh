@@ -26,7 +26,8 @@ else
     if [[ "$imgpath" == *.mp4 ]] || [[ "$imgpath" == *.mov ]]; then
         echo Sending "$imgpath" to mpvpaper.
         # Change mpvpaper wallpaper
-        mpvpaper -o "--no-audio --loop" '*' "$imgpath"
+        mpvpaper -p -f -o "--no-audio --loop" '*' "$imgpath"
+        "$HOME"/.config/ags/scripts/color_generation/colorgen.sh "${imgpath}" --apply
         exit 0
     else
         if pidof mpvpaper; then

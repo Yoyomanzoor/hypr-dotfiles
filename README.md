@@ -4,9 +4,8 @@ This project was forked from [end-4 illogical impulse](https://github.com/end-4/
 
 ## TODO
 
-- [ ] Replace the waifu thing with a prayer time widget
 - [x] Remake the Quran thing from KDE setup to sidebar
-- [ ] Fix mpv so ytfzf shows in media bar
+- [X] Fix mpv so ytfzf shows in media bar | I did this a while ago, forgot
 - [x] Update hint tooltip for both hyprland and nvim
 - [x] Prayer times in top bar
 - [x] Update color changing script to include other tools, like `alacritty`, 
@@ -68,11 +67,13 @@ Copy dots to home directory (make a backup!)
 
 Restart the machine and it should all be working!
 
+Video theme changing button requires the `all.m3u` file containing apple aerial videos, which I will upload later.
+
 ## Backing up dotfiles
 
 From [this link](https://www.atlassian.com/git/tutorials/dotfiles).
 
-```fish
+```bash
 git init --bare $HOME/.cfg
 alias home '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 home config --local status.showUntrackedFiles no
@@ -84,20 +85,20 @@ Add this to `fish.config`.
 alias home '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ```
 
-Add stuff to config
-
-```fish
-home add $FILE
-home commit -m "Add $FILE"
-home push
-```
-
 Init with git
 
-```fish
+```bash
 home remote add origin REMOTE-URL
 home remote -v
 home push origin main #or whatever branch
+```
+
+How to add stuff to config
+
+```bash
+home add $FILE
+home commit -m "Add $FILE"
+home push
 ```
 
 ## Random thoughts/FAQ
@@ -194,7 +195,7 @@ WantedBy=default.target
 
 Then create `/opt/scripts/rclone-gdrive.sh`
 
-```sh
+```bash
 #!/usr/bin/bash
 
 mkdir -p $HOME/drive
