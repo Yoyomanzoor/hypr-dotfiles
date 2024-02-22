@@ -152,7 +152,7 @@ const prayers = () => Box({
     ],
 });
 
-const clickOutsideToClose = EventBox({
+const clickOutsideToClose3 = EventBox({
     onPrimaryClick: () => App.closeWindow('prayertimes'),
     onSecondaryClick: () => App.closeWindow('prayertimes'),
     onMiddleClick: () => App.closeWindow('prayertimes'),
@@ -180,7 +180,7 @@ export default () => Widget.Window({
                     self.reveal_child = !self.reveal_child;
                 }),
             }),
-            clickOutsideToClose,
+            clickOutsideToClose3,
         ],
     }),
 });

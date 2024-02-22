@@ -65,8 +65,30 @@ const Utilities = () => Box({
                 Utils.execAsync(['bash', '-c', '$HOME/.config/ags/scripts/color_generation/randomvideo.sh']).catch(print)
             }
         }),
+        UtilButton({
+            name: 'Check weather', icon: 'keyboard', onClicked: () => {
+                App.toggleWindow('weather');
+            }
+        }),
     ]
 })
+
+const WeatherIndicator = () => Box({
+    className: 'spacing-h-4 txt-onSurfaceVariant',
+    // onClicked: () => {
+    //     App.toggleWindow('weather');
+    // },
+    children: [
+        Label({
+            className: 'txt-smallie txt-onSurfaceVariant',
+            setup: (self) => self.poll(1000 * 60 * 10, (label) => {
+                execAsync(['bash', '-c', `curl ar.wttr.in/$(curl ipinfo.io/city 2> /dev/null | tr -d ' ')?format=3`])
+                    .then((output) => label.label = output)
+                    .catch(print)
+            }),
+        }),
+    ]
+});
 
 const BarBattery = () => Box({
     className: 'spacing-h-4 txt-onSurfaceVariant',
@@ -183,6 +205,8 @@ export const ModuleSystem = () => Widget.EventBox({
                 items: [
                     ['laptop', Box({
                         className: 'spacing-h-5', children: [
+                            BarGroup({ child: WeatherIndicator() }),
+                            // BarGroup({ child: BarResource('Weather', 'developer_board', `curl wttr.in/$(curl ipinfo.io/city 2> /dev/null | tr -d ' ')\?format=3`), }),
                             BarGroup({ child: Utilities() }),
                             BarGroup({ child: BarBattery() }),
                             // BarGroup({ child: BarResource('CPU usage', 'developer_board', `mpstat | awk '/all/ {print($4 + $11)}'`), }),
@@ -194,6 +218,7 @@ export const ModuleSystem = () => Widget.EventBox({
                     ['desktop', Box({
                         className: 'spacing-h-5', children: [
                             BarGroup({ child: Utilities() }),
+                            BarGroup({ child: BarResource('Weather', 'developer_board', `curl ar/wttr.in/$curl ipinfo.io/city 2> /dev/null | tr -d ' ')\\?format=3`), }),
                             BarGroup({ child: BarResource('CPU usage', 'developer_board', `mpstat | awk '/all/ {print($4 + $11)}'`), }),
                             BarGroup({ child: BarResource('RAM usage', 'memory', `free | awk '/^Mem/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),
                             // BarGroup({ child: BarResource('Swap usage', 'swap_horiz', `free | awk '/^Swap/ {printf("%.2f\\n", ($3/$2) * 100)}'`), }),

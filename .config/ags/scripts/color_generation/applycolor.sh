@@ -255,5 +255,5 @@ apply_kitty &
 apply_cava &
 apply_discord &
 apply_firefox &
-apply_qutebrowser &
+# apply_qutebrowser &
 apply_anki

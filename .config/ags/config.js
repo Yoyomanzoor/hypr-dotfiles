@@ -7,6 +7,7 @@ import Bar from './widgets/bar/main.js';
 import Cheatsheet from './widgets/cheatsheet/main.js';
 import Vimsheet from './widgets/vimsheet/main.js';
 import PrayerTimes from './widgets/prayertimes/main.js';
+import Weather from './widgets/weather/main.js';
 // import DesktopBackground from './widgets/desktopbackground/main.js';
 // import Dock from './widgets/dock/main.js';
 import { CornerTopleft, CornerTopright, CornerBottomleft, CornerBottomright } from './widgets/screencorners/main.js';
@@ -51,6 +52,7 @@ export default {
         Cheatsheet(),
         Vimsheet(),
         PrayerTimes(),
+        Weather(),
         SideLeft(),
         SideRight(),
         Osk(), // On-screen keyboard

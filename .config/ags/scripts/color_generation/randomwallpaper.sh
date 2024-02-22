@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 # Author: Yoyomanzoor
 
+killall mpvpaper
+
 imgpath=$(find "$HOME"/Pictures/wallpapers -type f | shuf -n 1)
 # screensizey=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f2 | head -1)
 # cursorposx=$(hyprctl cursorpos -j | gojq '.x')

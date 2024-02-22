@@ -14,3 +14,5 @@ c.editor.command = ["alacritty", "-e", "nvim", "{}"]
 # })
 
 config.source('qutewal.py')
+
+config.bind("cr", "config-source")
