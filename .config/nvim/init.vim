@@ -141,6 +141,10 @@ set shiftwidth=4
 set tabstop=4
 set encoding=utf8
 set clipboard=unnamedplus
+:filetype on
+" autocmd FileType markdown set spell
+autocmd FileType make set noexpandtab shiftwidth=4 softtabstop=4
+" autocmd ColorScheme * hi SpellBad cterm=underline
 :noremap tt :tab split<CR>
 :noremap tn :tabnew \| lua MiniStarter.open()<CR>
 :noremap t. :tabm +1 <CR>
