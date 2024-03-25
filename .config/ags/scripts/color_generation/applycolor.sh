@@ -212,7 +212,10 @@ apply_firefox() {
 }
 
 apply_qutebrowser() {
-    qutebrowser ':config-source'
+    if [ `pgrep qutebrowser` ]; then
+        qutebrowser ':config-source'
+    fi
+    # qutebrowser ':config-source'
 }
 
 apply_anki() {
