@@ -141,6 +141,7 @@ set shiftwidth=4
 set tabstop=4
 set encoding=utf8
 set clipboard=unnamedplus
+set linebreak
 :filetype on
 " autocmd FileType markdown set spell
 autocmd FileType make set noexpandtab shiftwidth=4 softtabstop=4

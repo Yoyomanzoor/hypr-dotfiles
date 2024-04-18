@@ -82,7 +82,7 @@ const WeatherIndicator = () => Box({
         Label({
             className: 'txt-smallie txt-onSurfaceVariant',
             setup: (self) => self.poll(1000 * 60 * 10, (label) => {
-                execAsync(['bash', '-c', `curl ar.wttr.in/$(curl ipinfo.io/city 2> /dev/null | tr -d ' ')?format=3`])
+                execAsync(['bash', '-c', `curl wttr.in/$(curl ipinfo.io/city 2> /dev/null | tr -d ' ')?format=3`])
                     .then((output) => label.label = output)
                     .catch(print)
             }),
