@@ -12,7 +12,7 @@ if [ "$1" == "--noswitch" ]; then
 else
     # Select and set image (hyprland)
     cd "$HOME/Pictures"
-    imgpath=$(yad --width 1200 --height 800 --file --title='Choose wallpaper')
+    imgpath=$(yad --width 1200 --height 800 --file --add-preview --large-preview --title='Choose wallpaper')
     screensizey=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f2 | head -1)
     cursorposx=$(hyprctl cursorpos -j | gojq '.x')
     cursorposy=$(hyprctl cursorpos -j | gojq '.y')

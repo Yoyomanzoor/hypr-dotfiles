@@ -61,13 +61,14 @@ const Utilities = () => Box({
             }
         }),
         UtilButton({
-            name: 'Change theme', icon: 'movie', onClicked: () => {
+            name: 'Video theme', icon: 'movie', onClicked: () => {
                 Utils.execAsync(['bash', '-c', '$HOME/.config/ags/scripts/color_generation/randomvideo.sh']).catch(print)
             }
         }),
         UtilButton({
-            name: 'Check weather', icon: 'keyboard', onClicked: () => {
-                App.toggleWindow('weather');
+            name: 'Change theme style', icon: 'contrast', onClicked: () => {
+                Utils.execAsync(['bash', '-c', 'themedmenu']).catch(print)
+                // App.toggleWindow('weather');
             }
         }),
     ]

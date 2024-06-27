@@ -1,0 +1,28 @@
+#!/bin/sh
+
+THEME=$(echo -e "random\nislamic\nnature\nspace\nnordic" | fuzzel --dmenu)
+echo $THEME
+case $THEME in
+    random)
+        imgpath=$(find "$HOME"/Pictures/wallpapers -type f | shuf -n 1)
+        ;;
+    nordic)
+        imgpath=$(find "$HOME"/Pictures/wallpapers/nordic -type f | shuf -n 1)
+        ;;
+    islamic)
+        imgpath=$(find "$HOME"/Pictures/wallpapers/islamic -type f | shuf -n 1)
+        ;;
+    nature)
+        imgpath=$(find "$HOME"/Pictures/wallpapers/nature -type f | shuf -n 1)
+        ;;
+    space)
+        imgpath=$(find "$HOME"/Pictures/wallpapers/space -type f | shuf -n 1)
+        ;;
+esac
+
+swww img "$imgpath" --transition-step 100 --transition-fps 60 \
+    --transition-type grow --transition-angle 30 --transition-duration 1
+
+
+"$HOME"/.config/ags/scripts/color_generation/colorgen.sh "${imgpath}" --apply
+
