@@ -9,7 +9,11 @@ settings:
   bindings.commands:
     global:
       normal:
+        ',p': spawn --userscript qute-pass --dmenu-invocation wofi --show=drun
         cr: config-source
+      passthrough:
+        <Alt+Left>: back
+        <Alt+Right>: forward
   colors.webpage.darkmode.algorithm:
     global: lightness-cielab
   colors.webpage.darkmode.enabled:
@@ -34,6 +38,9 @@ settings:
     global: when-searching
   scrolling.smooth:
     global: true
+  spellcheck.languages:
+    global:
+    - en-US
   statusbar.position:
     global: bottom
   statusbar.show:

@@ -246,6 +246,15 @@ apply_anki() {
     done
 }
 
+apply_chromium() {
+    if [ ! -f "$HOME/Documents/chromiumthemes/Pywal/manifest.json" ]; then
+        echo "Template file not found for Chromium. Skipping that."
+        return
+    fi
+    # Generate theme
+    "$HOME"/Documents/chromiumthemes/generate-theme.sh
+}
+
 # apply_svgs
 apply_ags &
 apply_hyprland &
@@ -259,4 +268,5 @@ apply_cava &
 apply_discord &
 apply_firefox &
 # apply_qutebrowser &
-apply_anki
+apply_anki &
+apply_chromium
