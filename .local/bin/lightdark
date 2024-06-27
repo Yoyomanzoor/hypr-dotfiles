@@ -1,0 +1,10 @@
+#!/bin/sh
+
+File=~/.cache/ags/user/colormode.txt
+if [ "$(cat "$File")" = '-l' ] ; then
+    echo "" > $File
+else
+    echo "-l" > $File
+fi
+
+source ~/.config/ags/scripts/color_generation/switchwall.sh --noswitch
