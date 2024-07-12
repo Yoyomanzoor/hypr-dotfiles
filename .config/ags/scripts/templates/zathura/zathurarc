@@ -18,35 +18,40 @@ set selection-clipboard clipboard
 
 # mappings
 
-unmap f
-map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"
+
+# unmap f
+# map f toggle_fullscreen
+# map [fullscreen] f toggle_fullscreen
 
 # ----- colour config ----- 
-set notification-error-bg "rgba(59,66,82,0.8)"
-set notification-error-fg "#d08770"
-set notification-warning-bg "rgba(59,66,82,0.8)"
-set notification-warning-fg "#d08770"
-set notification-bg "rgba(59,66,82,0.8)"
-set notification-fg "#d08770"
-set completion-group-bg "rgba(59,66,82,0.8)"
-set completion-group-fg "#8fbcbb"
-set completion-bg "#4c566a"
-set completion-fg "#d8dee9"
-set completion-highlight-bg "#8fbcbb"
-set completion-highlight-fg "rgba(59,66,82,0.8)"
-set inputbar-bg "#4c566a"
-set inputbar-fg "#d8dee9"
-set statusbar-bg "rgba(59,66,82,0.8)"
-set statusbar-fg "#d8dee9"
-set highlight-color "#8fbcbb"
-set highlight-active-color "#88c0d0"
-set default-bg "rgba(59,66,82,0.8)"
-set default-fg "#d8dee9"
-set recolor-lightcolor "#4c566a"
-set recolor-darkcolor "#d8dee9"
-set index-bg "#4c566a"
-set index-fg "#d8dee9"
-set index-active-bg "#8fbcbb"
-set index-active-fg "rgba(59,66,82,0.8)"
+set notification-error-bg "#$background #"
+set notification-error-fg "#$secondaryContainer #"
+set notification-warning-bg "#$background #"
+set notification-warning-fg "#$secondaryContainer #"
+set notification-bg "#$background #"
+set notification-fg "#$secondaryContainer #"
+set completion-group-bg "#$background #"
+set completion-group-fg "#$secondary #"
+set completion-bg "#$primaryContainer #"
+set completion-fg "#$onBackground #"
+set completion-highlight-bg "#$secondary #"
+set completion-highlight-fg "#$background #"
+set inputbar-bg "#$primaryContainer #"
+set inputbar-fg "#$onBackground #"
+set statusbar-bg "#$background #"
+set statusbar-fg "#$onBackground #"
+set highlight-color "#$secondary #"
+set highlight-active-color "#$onSurface #"
+set default-bg "#$background #"
+set default-fg "#$onBackground #"
+set recolor-lightcolor "#$primaryContainer #"
+set recolor-darkcolor "#$onBackground #"
+set index-bg "#$primaryContainer #"
+set index-fg "#$onBackground #"
+set index-active-bg "#$secondary #"
+set index-active-fg "#$background #"
 set recolor true
+set recolor-keephue true
+# set recolor-reverse-video true

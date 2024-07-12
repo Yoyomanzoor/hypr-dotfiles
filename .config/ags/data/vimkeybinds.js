@@ -1,7 +1,7 @@
 export const vimList = [[
     {
-        "icon": "keyboard_command_key",
-        "name": "Commands",
+        "icon": "description",
+        "name": "Vim Commands",
         "binds": [
             { "keys": [":h[elp]", "+", "keyword"], "action": "open help for keyword" },
             { "keys": [":ter[minal]"], "action": "open a terminal" },
@@ -9,10 +9,10 @@ export const vimList = [[
         "appeartick": 1
     },
     {
-        "icon": "overview_key",
-        "name": "Workspaces: management",
+        "icon": "keyboard",
+        "name": "Vim Shortcuts",
         "binds": [
-            { "keys": ["", "Shift", "+", "#"], "action": "Move window to workspace #" },
+            { "keys": ["d", "i", "+", "\""], "action": "remove everything between quotes" },
         ],
         "appeartick": 1
     },
@@ -27,10 +27,25 @@ export const vimList = [[
 ],
 [
     {
-        "icon": "widgets",
-        "name": "Widgets (AGS)",
+        "icon": "picture_as_pdf",
+        "name": "Zathura",
         "binds": [
-            { "keys": [""], "action": "Toggle overview/launcher" },
+            { "keys": ["A"], "action": "Fit the height of the current page to the display window" },
+            { "keys": ["S"], "action": "Fit the width of the current page to the display window" },
+            { "keys": ["D"], "action": "Toggle booklet view" },
+            { "keys": ["R"], "action": "Rotate by 90 degrees clockwise" },
+            { "keys": ["Shift", "+", "H"], "action": "Go to the top of the currently selected page" },
+            { "keys": ["Shift", "+", "L"], "action": "Go to the bottom of the currently selected page" },
+            { "keys": ["Ctrl", "+", "N"], "action": "Toggle information bar" },
+            { "keys": ["Ctrl", "+", "M"], "action": "Toggle input field bar" },
+            { "keys": ["Ctrl", "+", "R"], "action": "Toggle color theme" },
+            { "keys": ["F5"], "action": "Presentation mode" },
+            { "keys": ["Shift", "+", "F"], "action": "Show all link hints" },
+            { "keys": ["C"], "action": "Copy link to clipboard" },
+            { "keys": ["M", "+", "number"], "action": "Create a bookmark on current page and save to 'number'" },
+            { "keys": ["'", "+", "number"], "action": "Load bookmark stored at number" },
+            { "keys": [":bdelete"], "action": "Delete bookmark" },
+            { "keys": ["Tab"], "action": "Display content index" },
         ],
         "appeartick": 2
     },

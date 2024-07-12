@@ -128,6 +128,20 @@ apply_kitty() {
     kill -SIGUSR1 $(pidof kitty)
 }
 
+apply_zathura() {
+    # Check if scripts/templates/zathura/zathurarc exists
+    if [ ! -f "scripts/templates/zathura/zathurarc" ]; then
+        echo "Template file not found for Zathura. Skipping that."
+        return
+    fi
+    # Copy template
+    cp "scripts/templates/zathura/zathurarc" "$HOME/.config/zathura/zathurarc"
+    # Apply colors
+    for i in "${!colorlist[@]}"; do
+        sed -i "s/${colorlist[$i]} #/${colorvalues[$i]#\#}/g" "$HOME/.config/zathura/zathurarc" 
+    done
+}
+
 apply_cava() {
     # Check if scripts/templates/cava/config exists
     if [ ! -f "scripts/templates/cava/config" ]; then
@@ -264,6 +278,7 @@ apply_fuzzel &
 apply_foot &
 apply_alacritty &
 apply_kitty &
+apply_zathura &
 apply_cava &
 apply_discord &
 apply_firefox &

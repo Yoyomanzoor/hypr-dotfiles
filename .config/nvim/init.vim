@@ -162,6 +162,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+hi Normal guibg=NONE ctermbg=NONE
 
 map <silent> <leader>w :lua require('nvim-window').pick()<CR>
 

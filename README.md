@@ -203,3 +203,38 @@ rclone mount googledrive: $HOME/drive/
 ```
 
 Google drive should be mounted at `$HOME/drive` on startup for your user.
+
+### Vimified
+
+See [this link](https://github.com/erikw/vim-keybindings-everywhere-the-ultimate-list)
+
+#### Internet
+
+##### Chromium + Vimium
+Vimium in chromium is pretty good, gives the chrome vibes + vim keybindings. The [chromium pywal generator](https://github.com/metafates/ChromiumPywal) works well, although requires restarting the browser to apply if theme was changed while the browser is open. I somehow got it to change the background based on pywal too, although I don't remember how... It's not the most vimmed up browser, but pretty good for an in between vim and chrome experience. Plus, chrome extensions are a huge plus.
+
+##### Firefox + Tridactyl
+A classic, works great. Had some trouble with EHR/epic navigation on a virtual desktop using it, but otherwise an okay experience.
+
+##### qutebrowser
+Current daily, solid stuff. Plus the pywal integration is great. The darkmode needs a lot of work,though. Pywal integration via [this script](https://github.com/hallonfras/qutewal), although same problem with chromium/requires browser restart to apply. Also, I'm a fan of all the hints being on the home keys
+
+##### Vieb
+Really nice experience to use, extremely vim-looking and is basically vim in internet form. Maybe too vim-looking... Not great documentation and will probably take me too much time to figure out customizations due to the lack of documentation. Haven't yet figured out pywal integration.
+
+#### File manager
+
+##### Ranger
+The only way to go. Needs to be used with kitty, though (`kitty -e ranger` in keybinds). Might want to turn off the kitty notification for closing tabs (`confirm_os_window_close 0` in kitty.conf).
+
+#### Image viewer
+
+##### vimiv
+Found this to be the most intuitive. Feels a lot like ranger.
+
+##### sxiv, feh, etc.
+Didn't like these as much. sxiv wasn't as intuitive, feh I honestly didn't understand.
+
+
+
+
