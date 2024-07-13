@@ -17,10 +17,14 @@ export const vimList = [[
         "appeartick": 1
     },
     {
-        "icon": "move_group",
-        "name": "Windows",
+        "icon": "folder",
+        "name": "Ranger",
         "binds": [
-            { "keys": ["", "Shift", "+", "Q"], "action": "Close window" },
+            { "keys": ["SPACE"], "action": "Mark file" },
+            { "keys": ["O"], "action": "Show sort options" },
+            { "keys": ["dD"], "action": "Delete file" },
+            { "keys": ["cw"], "action": "Rename file" },
+            { "keys": ["q"], "action": "Quit" },
         ],
         "appeartick": 1
     }
@@ -68,10 +72,22 @@ export const vimList = [[
 ],
 [
     {
-        "icon": "apps",
-        "name": "Apps",
+        "icon": "videocam",
+        "name": "mpv",
         "binds": [
-            { "keys": ["", "+", "RETURN"], "action": "Launch terminal: kitty" },
+            { "keys": ["P"], "action": "Pause" },
+            { "keys": ["F"], "action": "Toggle fullscreen" },
+            { "keys": ["M"], "action": "Mute" },
+            { "keys": ["V"], "action": "Toggle subtitles" },
+            { "keys": ["S"], "action": "Screenshot" },
+            { "keys": ["Q"], "action": "Quit" },
+            { "keys": ["O"], "action": "Toggle show progress" },
+            { "keys": ["PgUp", "/", "PgDown"], "action": "Next/previous chapter" },
+            { "keys": [">", "/", "<"], "action": "Next/previous file in playlist" },
+            { "keys": ["→"], "action": "Seek 5 seconds" },
+            { "keys": ["Shift", "+", "PgUp/PgDown"], "action": "Seek 10 minutes" },
+            { "keys": ["["], "action": "Decrease speed" },
+            { "keys": ["]"], "action": "Increase speed" },
         ],
         "appeartick": 3
     },
