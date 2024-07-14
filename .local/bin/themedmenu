@@ -1,24 +1,41 @@
 #!/bin/sh
 
-THEME=$(echo -e "random\nislamic\nnature\nspace\nnordic" | fuzzel --dmenu)
+THEME=$(echo -e "random\nislamic\nnature\nspace\nmetropolitan\nfantasy\nnordic\dracula\nanime" | fuzzel --dmenu)
 echo $THEME
 case $THEME in
     random)
         imgpath=$(find "$HOME"/Pictures/wallpapers -type f | shuf -n 1)
         ;;
     nordic)
-        imgpath=$(find "$HOME"/Pictures/wallpapers/nordic -type f | shuf -n 1)
+        imgpath=$(find "$HOME"/Pictures/nordic -type f | shuf -n 1)
+        ;;
+    dracula)
+        imgpath=$(find "$HOME"/Pictures/dracula -type f | shuf -n 1)
         ;;
     islamic)
-        imgpath=$(find "$HOME"/Pictures/wallpapers/islamic -type f | shuf -n 1)
+        imgpath=$(find "$HOME"/Pictures/islamic -type f | shuf -n 1)
         ;;
     nature)
-        imgpath=$(find "$HOME"/Pictures/wallpapers/nature -type f | shuf -n 1)
+        imgpath=$(find "$HOME"/Pictures/nature -type f | shuf -n 1)
         ;;
     space)
-        imgpath=$(find "$HOME"/Pictures/wallpapers/space -type f | shuf -n 1)
+        imgpath=$(find "$HOME"/Pictures/space -type f | shuf -n 1)
+        ;;
+    metropolitan)
+        imgpath=$(find "$HOME"/Pictures/metropolitan -type f | shuf -n 1)
+        ;;
+    anime)
+        imgpath=$(find "$HOME"/Pictures/anime -type f | shuf -n 1)
+        ;;
+    fantasy)
+        imgpath=$(find "$HOME"/Pictures/fantasy -type f | shuf -n 1)
         ;;
 esac
+
+if [ -z "$imgpath" ]; then
+    echo "No image found"
+    exit 1
+fi
 
 swww img "$imgpath" --transition-step 100 --transition-fps 60 \
     --transition-type grow --transition-angle 30 --transition-duration 1

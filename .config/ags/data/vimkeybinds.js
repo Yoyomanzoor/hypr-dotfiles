@@ -85,6 +85,7 @@ export const vimList = [[
             { "keys": ["PgUp", "/", "PgDown"], "action": "Next/previous chapter" },
             { "keys": [">", "/", "<"], "action": "Next/previous file in playlist" },
             { "keys": ["→"], "action": "Seek 5 seconds" },
+            { "keys": ["↑"], "action": "Seek 1 minute" },
             { "keys": ["Shift", "+", "PgUp/PgDown"], "action": "Seek 10 minutes" },
             { "keys": ["["], "action": "Decrease speed" },
             { "keys": ["]"], "action": "Increase speed" },
