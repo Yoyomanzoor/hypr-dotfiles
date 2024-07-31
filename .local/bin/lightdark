@@ -8,3 +8,4 @@ else
 fi
 
 source ~/.config/ags/scripts/color_generation/switchwall.sh --noswitch
+# source ~/.config/ags/scripts/color_generation/applycolor.sh

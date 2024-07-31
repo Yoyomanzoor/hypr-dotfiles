@@ -6,6 +6,7 @@ import { App, Utils } from './imports.js';
 import Bar from './widgets/bar/main.js';
 import Cheatsheet from './widgets/cheatsheet/main.js';
 import Vimsheet from './widgets/vimsheet/main.js';
+import Keebsheet from './widgets/keeb/main.js';
 import PrayerTimes from './widgets/prayertimes/main.js';
 import Weather from './widgets/weather/main.js';
 // import DesktopBackground from './widgets/desktopbackground/main.js';
@@ -51,6 +52,7 @@ export default {
         Indicator(),
         Cheatsheet(),
         Vimsheet(),
+        Keebsheet(),
         PrayerTimes(),
         Weather(),
         SideLeft(),

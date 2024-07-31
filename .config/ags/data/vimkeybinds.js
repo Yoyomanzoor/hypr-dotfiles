@@ -1,35 +1,62 @@
 export const vimList = [[
     {
-        "icon": "description",
-        "name": "Vim Commands",
-        "binds": [
-            { "keys": [":h[elp]", "+", "keyword"], "action": "open help for keyword" },
-            { "keys": [":ter[minal]"], "action": "open a terminal" },
-        ],
-        "appeartick": 1
-    },
-    {
         "icon": "keyboard",
         "name": "Vim Shortcuts",
         "binds": [
-            { "keys": ["d", "i", "+", "\""], "action": "remove everything between quotes" },
+            { "keys": ["^"], "action": "Start of line (after whitespace)" },
+            { "keys": ["{number}G"], "action": "Go to line {number}" },
+            { "keys": ["fc"], "action": "Go forward to character c" },
+            { "keys": ["Fc"], "action": "Go backward to character c" },
+            { "keys": ["zz"], "action": "Center this line" },
+            { "keys": ["zt"], "action": "Top this line" },
+            { "keys": ["zb"], "action": "Bottom this line" },
+            { "keys": ["*"], "action": "Next whole word under cursor" },
+            { "keys": ["#"], "action": "Previous whole word under cursor" },
+            { "keys": ["d", "i", "+", "\""], "action": "Remove everything between quotes" },
+            { "keys": ["gcc"], "action": "Comment line" },
+            { "keys": ["gbc"], "action": "Comment block" },
+            { "keys": ["g~"], "action": "Swap case of selection" },
+            { "keys": ["gU/gu"], "action": "Uppercase/lowercase" },
+            { "keys": ["gf"], "action": "Go to file in cursor" },
+            { "keys": ["Leader", "+", "r"], "action": "Home screen" },
+            { "keys": ["tn"], "action": "New tab on home screen" },
+            { "keys": ["tt"], "action": "Split tab" },
+            { "keys": ["t."], "action": "Next tab" },
+            { "keys": ["t,"], "action": "Previous tab" },
+            { "keys": ["gd"], "action": "Go to definition" },
+            { "keys": ["gy"], "action": "Type definition" },
+            { "keys": ["gr"], "action": "References" },
+            { "keys": ["Ctrl", "+", "n"], "action": "NerdTree" },
+            { "keys": ["Ctrl", "+", "d"], "action": "Delete buffer" },
+            { "keys": ["m", "+", "key"], "action": "Mark location" },
+            { "keys": ["\'", "+", "key"], "action": "Go to mark location" },
+            { "keys": ["\'", "+", "\'"], "action": "Go to last location" },
+            { "keys": ["[\'", "+", "]\'"], "action": "Cycle local marks" },
+            { "keys": ["\'", "+", "."], "action": "Go to last edit location" },
+            { "keys": ["\'", "+", "^"], "action": "Go to last cursor location on edit mode" },
+            { "keys": ["F5"], "action": "View undo history" },
+            { "keys": ["za"], "action": "Toggle fold" },
+            { "keys": ["zM"], "action": "Close all folds" },
+            { "keys": ["zR"], "action": "Open all folds" },
+            { "keys": ["zm"], "action": "Fold more" },
+            { "keys": ["zr"], "action": "Fold less" },
         ],
         "appeartick": 1
     },
-    {
-        "icon": "folder",
-        "name": "Ranger",
-        "binds": [
-            { "keys": ["SPACE"], "action": "Mark file" },
-            { "keys": ["O"], "action": "Show sort options" },
-            { "keys": ["dD"], "action": "Delete file" },
-            { "keys": ["cw"], "action": "Rename file" },
-            { "keys": ["q"], "action": "Quit" },
-        ],
-        "appeartick": 1
-    }
 ],
 [
+    {
+        "icon": "description",
+        "name": "Vim Commands",
+        "binds": [
+            { "keys": [":{number}"], "action": "Go to line {number}" },
+            { "keys": [":h[elp]", "+", "keyword"], "action": "Open help for keyword" },
+            { "keys": [":ter[minal]"], "action": "Open a terminal" },
+            { "keys": [":delm", "+", "key"], "action": "Delete mark" },
+            { "keys": [":delm!"], "action": "Delete all marks" },
+        ],
+        "appeartick": 1
+    },
     {
         "icon": "picture_as_pdf",
         "name": "Zathura",
@@ -54,21 +81,27 @@ export const vimList = [[
         "appeartick": 2
     },
     {
-        "icon": "construction",
-        "name": "Utilities",
+        "icon": "phishing",
+        "name": "Fish",
         "binds": [
-            { "keys": ["Ctrl", "", "+", "S"], "action": "Screen snip" },
+            { "keys": ["Alt", "+", "L"], "action": "ls" },
+            { "keys": ["Alt", "+", "H"], "action": "Show command man page" },
+            { "keys": ["Alt", "+", "W"], "action": "Show command short description" },
         ],
         "appeartick": 2
     },
     {
-        "icon": "water_drop",
-        "name": "Hypr",
+        "icon": "folder",
+        "name": "Ranger",
         "binds": [
-            { "keys": ["", "+", "\\"], "action": "Toggle all keybinds" },
+            { "keys": ["SPACE"], "action": "Mark file" },
+            { "keys": ["O"], "action": "Show sort options" },
+            { "keys": ["dD"], "action": "Delete file" },
+            { "keys": ["cw"], "action": "Rename file" },
+            { "keys": ["q"], "action": "Quit" },
         ],
         "appeartick": 2
-    },
+    }
 ],
 [
     {
@@ -82,8 +115,8 @@ export const vimList = [[
             { "keys": ["S"], "action": "Screenshot" },
             { "keys": ["Q"], "action": "Quit" },
             { "keys": ["O"], "action": "Toggle show progress" },
-            { "keys": ["PgUp", "/", "PgDown"], "action": "Next/previous chapter" },
-            { "keys": [">", "/", "<"], "action": "Next/previous file in playlist" },
+            { "keys": ["PgUp", "OR", "PgDown"], "action": "Next/previous chapter" },
+            { "keys": [">", "OR", "<"], "action": "Next/previous file in playlist" },
             { "keys": ["→"], "action": "Seek 5 seconds" },
             { "keys": ["↑"], "action": "Seek 1 minute" },
             { "keys": ["Shift", "+", "PgUp/PgDown"], "action": "Seek 10 minutes" },
@@ -93,18 +126,10 @@ export const vimList = [[
         "appeartick": 3
     },
     {
-        "icon": "keyboard",
-        "name": "Typing",
-        "binds": [
-            { "keys": ["", "+", "V"], "action": "Clipboard history  >>  clipboard" },
-        ],
-        "appeartick": 3
-    },
-    {
         "icon": "terminal",
-        "name": "Launcher actions",
+        "name": "Alacritty",
         "binds": [
-            { "keys": [">raw"], "action": "Toggle mouse acceleration" },
+            { "keys": ["Shift", "Ctrl", "+", "SPACE"], "action": "Toggle vi mode" },
         ],
         "appeartick": 3
     }

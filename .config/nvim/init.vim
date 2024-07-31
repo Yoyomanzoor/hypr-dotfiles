@@ -35,6 +35,10 @@ Plug 'echasnovski/mini.nvim'
 Plug 'echasnovski/mini.starter'
 Plug 'karb94/neoscroll.nvim'
 Plug 'numToStr/Comment.nvim'
+Plug 'vim-scripts/savevers.vim'
+" Plug 'sjl/gundo.vim'
+Plug 'mbbill/undotree'
+Plug 'pangloss/vim-javascript'
 
 
 " Initialize plugin system
@@ -128,6 +132,25 @@ let g:vimtex_compiler_method = 'latexrun'
 " following line. The default is usually fine and is the symbol "\".
 let maplocalleader = ","
 
+" This enables VimTeX to automatically insert braces after commands like \frac
+" and \sqrt. This is a feature of the LaTeX-suite plugin for Vim and is
+" disabled by default in VimTeX. If you want this feature, you can enable it
+" with the following line.
+" let g:vimtex_autoclose = 1
+" let g:vimtex_fold_enabled = 0
+
+" Save revisions of the file
+" Use :Purge 0 to remove all revisions
+" Use :Purge 1 to remove all revisions except the last one
+set backup
+set backupdir=~/tmp/
+set backupext=string
+" set patchmode=.clean
+
+set undofile
+set undodir=~/.vim/undodir
+
+nnoremap <F5> :UndotreeToggle<CR>
 
 " YoyoVim
 set showcmd
