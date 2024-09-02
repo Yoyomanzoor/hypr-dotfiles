@@ -239,18 +239,9 @@ Didn't like these as much. sxiv wasn't as intuitive, feh I honestly didn't under
 
 Currently using [ktrl](https://github.com/ItayGarin/ktrl?tab=readme-ov-file) to make capslock act as escape. It's not perfect, home row mods don't work well. Setup as below.
 
-`/etc/ktrl/cfg.ron`
+`/opt/ktrl/cfg.ron`
 
 ```ron
-// ktrl Example Configuration File
-// -------------------------------
-//
-// ktrl config files use `ron` (Rust Object Notation) to serialize
-// the text into the internal `cfg::Cfg` struct.
-//
-// - The full KEY_... listing can be found inside the `keys::KeyCode` enum
-// - Layer entries are mapping between a source `KeyCode` into an `Action` (more on that below)
-//
 (
     // ktrl will register a TapHold as an hold after 300ms
     tap_hold_wait_time: 300,
@@ -261,16 +252,11 @@ Currently using [ktrl](https://github.com/ItayGarin/ktrl?tab=readme-ov-file) to 
     // Gives names to layers
     layer_aliases: {
         "base": 0,
-        "function_keys": 1,
-        "meta-disabled": 2,
-        "meta-enabled": 3,
+        "meta-disabled": 1,
+        "meta-enabled": 2,
     },
 
     layer_profiles: {
-        "function": Profile(
-            indices: [],
-            aliases: ["function_keys"],
-        ),
         "meta": Profile(
             indices: [],
             aliases: ["meta-enabled", "function_keys"]
@@ -293,27 +279,17 @@ Currently using [ktrl](https://github.com/ItayGarin/ktrl?tab=readme-ov-file) to 
         //   They map a source `KeyCode` to an `Action`.
         //
         {
-            KEY_LEFTMETA:  Tap(Key(KEY_LEFTCTRL)),
             KEY_RIGHTALT: TapHold(Key(KEY_RIGHTALT), ActivateProfile("meta")),
-            KEY_F1:  TapHold(Key(KEY_F1), ToggleLayerAlias("function_keys")),
             KEY_F3:  TapHold(Key(KEY_F3), DeactivateAllProfiles),
-
-        },
-        // function_keys
-        {
-            // maps standard Mac keyboard to default to function keys.
-            KEY_BRIGHTNESSDOWN: Tap(Key(KEY_F1)), // 224
-            KEY_BRIGHTNESSUP: Tap(Key(KEY_F2)), // 225
-            KEY_SCALE: Tap(Key(KEY_F3)), // 120
-            KEY_DASHBOARD: Tap(Key(KEY_F4)), // 204
-            KEY_KBDILLUMDOWN: Tap(Key(KEY_F5)), //229
-            KEY_KBDILLUMUP: Tap(Key(KEY_F6)), // 230
-            KEY_PREVIOUSSONG: Tap(Key(KEY_F7)), // 165
-            KEY_PLAYPAUSE: Tap(Key(KEY_F8)), // 164
-            KEY_NEXTSONG: Tap(Key(KEY_F9)), // 163
-            KEY_MUTE: Tap(Key(KEY_F10)), // 113
-            KEY_VOLUMEDOWN: Tap(Key(KEY_F11)), // 114
-            KEY_VOLUMEUP: Tap(Key(KEY_F12)), // 115
+            KEY_CAPSLOCK: TapHold(Key(KEY_ESC), Key(KEY_CAPSLOCK))
+            // KEY_F: TapHold(Key(KEY_F), Key(KEY_LEFTSHIFT)),
+            // KEY_D: TapHold(Key(KEY_D), Key(KEY_LEFTCTRL)),
+            // KEY_S: TapHold(Key(KEY_S), Key(KEY_LEFTALT)),
+            // KEY_A: TapHold(Key(KEY_A), Key(KEY_LEFTMETA)),
+            // KEY_J: TapHold(Key(KEY_J), Key(KEY_RIGHTSHIFT)),
+            // KEY_K: TapHold(Key(KEY_K), Key(KEY_RIGHTCTRL)),
+            // KEY_L: TapHold(Key(KEY_L), Key(KEY_RIGHTALT)),
+            // KEY_SEMICOLON: TapHold(Key(KEY_SEMICOLON), Key(KEY_RIGHTMETA))
         },
         // meta-disabled
         {
