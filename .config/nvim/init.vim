@@ -39,6 +39,7 @@ Plug 'vim-scripts/savevers.vim'
 " Plug 'sjl/gundo.vim'
 Plug 'mbbill/undotree'
 Plug 'pangloss/vim-javascript'
+Plug 'kmonad/kmonad-vim'
 
 
 " Initialize plugin system
@@ -166,8 +167,9 @@ set encoding=utf8
 set clipboard=unnamedplus
 set linebreak
 :filetype on
-" autocmd FileType markdown set spell
-autocmd FileType make set noexpandtab shiftwidth=4 softtabstop=4
+autocmd FileType markdown set spell
+" autocmd FileType make setlocal noexpandtab shiftwidth=4 softtabstop=4
+autocmd FileType make setlocal noexpandtab
 " autocmd ColorScheme * hi SpellBad cterm=underline
 :noremap tt :tab split<CR>
 :noremap tn :tabnew \| lua MiniStarter.open()<CR>

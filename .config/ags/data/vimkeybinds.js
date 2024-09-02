@@ -132,5 +132,14 @@ export const vimList = [[
             { "keys": ["Shift", "Ctrl", "+", "SPACE"], "action": "Toggle vi mode" },
         ],
         "appeartick": 3
+    },
+    {
+        "icon": "globe",
+        "name": "Vieb",
+        "binds": [
+            { "keys": [":", "b"], "action": "search tabs" },
+            { "keys": ["B", "B"], "action": "Last tab" },
+        ],
+        "appeartick": 3
     }
 ]];
