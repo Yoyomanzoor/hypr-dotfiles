@@ -1,0 +1,28 @@
+set darkreader=true
+set guinavbar=onupdate
+set guitabbar=onupdate
+
+map <A-t> <:set guitabbar=onupdate>
+map <A-r> <:set guitabbar=always>
+nmap b <toCommandMode>b 
+nmap o <toExploreMode>
+nmap O <:tabnew><toExploreMode>
+
+set searchwords=
+set searchwords+=gh~https://github.com/search?q=%s
+set searchwords+=r~https://reddit.com/r/%s
+set searchwords+=az~https://www.amazon.com/s?k=%s
+set searchwords+=gm~https://www.google.com/maps?hl=en&q=%s
+set searchwords+=w~https://en.wikipedia.org/?search=%s
+set searchwords+=wmc~https://commons.wikimedia.org/w/index.php?search=%s
+set searchwords+=y~https://www.youtube.com/results?search_query=%s
+set searchwords+=so~https://stackoverflow.com/search?q=%s
+set searchwords+=medse~https://medicalsciences.stackexchange.com/search?q=%s
+set searchwords+=am~https://next.amboss.com/us/search?q=%s
+set searchwords+=pb~https://pubmed.ncbi.nlm.nih.gov/?term=%s
+set searchwords+=ab~https://duckduckgo.com/?q=%s+medical+abbreviation
+
+set timeout
+set timeoutlen=1000
+set vimcommand=nvim
+
