@@ -11,9 +11,12 @@ from __future__ import (absolute_import, division, print_function)
 
 # You can import any python module as needed.
 import os
+import subprocess
 
 # You always need to import ranger.api.commands here to get the Command class:
 from ranger.api.commands import Command
+from ranger.container.file import File
+from ranger.ext.get_executables import get_executables
 
 
 # Any class that is a subclass of "Command" will be integrated into ranger as a
@@ -69,7 +72,6 @@ class fzf_locate(Command):
     See: https://github.com/junegunn/fzf
     """
     def execute(self):
-        import subprocess
         if self.quantifier:
             command = "fzf -e -i"
         else:
@@ -93,7 +95,6 @@ class fzf_select(Command):
     """
 
     def execute(self):
-        import subprocess
         import os
         from ranger.ext.get_executables import get_executables
 
@@ -173,7 +174,6 @@ class fzf_mark(Command):
     def execute(self):
         # from pathlib import Path  # Py3.4+
         import os
-        import subprocess
 
         fzf_name = "fzf" 
 
@@ -209,3 +209,90 @@ class fzf_mark(Command):
                 # self.fm.select_file( str(Path(filename).resolve()) )
                 self.fm.select_file( os.path.abspath(filename) )
                 self.fm.mark_files(all=False,toggle=True)
+
+class git_add(Command):
+    """
+    :git_update
+    Run the commands:
+    git pull
+    git add .
+    """
+    def execute(self):
+        self.fm.execute_command('git pull')
+        self.fm.execute_command('git add .')
+
+class git_update_push(Command):
+    """
+    :git_update
+    Run the commands:
+    git pull
+    git add .
+    git commit -m "Update"
+    git push
+    """
+    def execute(self):
+        # subprocess.check_call("git pull", shell=True)
+        # subprocess.check_call("git add .", shell=True)
+        # subprocess.check_call("git commit -m 'Automated update from ranger'", shell=True)
+        # subprocess.check_call("git push", shell=True)
+        # self.fm.notify("Git update done")
+        self.fm.execute_command('git pull')
+        self.fm.execute_command('git add .')
+        self.fm.execute_command('git commit -m "Automated update from ranger"')
+        self.fm.execute_command('git push')
+
+
+class toggle_flat(Command):
+    """
+    :toggle_flat
+
+    Flattens or unflattens the directory view.
+    """
+
+    def execute(self):
+        if self.fm.thisdir.flat == 0:
+            self.fm.thisdir.unload()
+            self.fm.thisdir.flat = -1
+            self.fm.thisdir.load_content()
+        else:
+            self.fm.thisdir.unload()
+            self.fm.thisdir.flat = 0
+            self.fm.thisdir.load_content()
+
+class YankContentWl(Command):
+    def execute(self):
+        if "wl-copy" not in get_executables():
+            self.fm.notify("wl-clipboard is not found.", bad=True)
+            return
+
+        arg = self.rest(1)
+        if arg:
+            if not os.path.isfile(arg):
+                self.fm.notify("{} is not a file".format(arg))
+                return
+            file = File(arg)
+        else:
+            file = self.fm.thisfile
+            if not file.is_file:
+                self.fm.notify("{} is not a file".format(file.relative_path))
+                return
+        if file.is_binary or file.image:
+            subprocess.check_call("wl-copy" + " < " + file.path, shell=True)
+        else:
+            self.fm.notify("{} is not an image file or a text file".format(file.relative_path))
+
+class grepAll(Command):
+    """
+    :grepAll <pattern>
+
+    Grep all files in the current directory for a pattern.
+    """
+    def execute(self):
+        if not self.arg(1):
+            self.fm.notify("Usage: grepAll <pattern>", bad=True)
+            return
+
+        pattern = self.rest(1)
+        self.fm.execute_console("grep -rnw . -e {}".format(pattern))
+
+

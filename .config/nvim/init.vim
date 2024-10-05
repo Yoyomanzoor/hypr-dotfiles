@@ -40,6 +40,8 @@ Plug 'vim-scripts/savevers.vim'
 Plug 'mbbill/undotree'
 Plug 'pangloss/vim-javascript'
 Plug 'kmonad/kmonad-vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 
 
 " Initialize plugin system
