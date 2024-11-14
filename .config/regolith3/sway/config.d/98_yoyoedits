@@ -1,0 +1,2 @@
+## Launch // Neovim // <> c ##
+bindsym $mod+c exec --no-startup-id kitty -e nvim

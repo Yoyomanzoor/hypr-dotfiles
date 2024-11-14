@@ -1,0 +1,4 @@
+profile {
+	output "Acer Technologies ED343CUR V 133403D462X00" mode 3440x1440@100Hz position 2560,0 transform normal scale 1 enable
+	output "California Institute of Technology 0x160F Unknown" mode 2560x1600@119.998Hz position 0,0 transform normal scale 1 enable
+}

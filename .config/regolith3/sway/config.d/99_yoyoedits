@@ -1,0 +1,11 @@
+mouse_warping container
+focus_follows_mouse yes
+
+set $opacity 0.9
+for_window [class=".*"] opacity $opacity
+for_window [app_id=".*"] opacity $opacity
+
+input type:keyboard {
+    xkb_layout us,ara
+    xkb_options grp:alt_space_toggle
+}

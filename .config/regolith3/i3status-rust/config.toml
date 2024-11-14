@@ -1,0 +1,59 @@
+theme = "semi-native"
+icons = "awesome"
+
+#[[block]]
+#block = "net"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "used"
+format = "{icon} {percentage}"
+alert_absolute = true
+unit = "GB"
+alert = 50
+warning = 40
+
+[[block]]
+block = "cpu"
+interval = 5
+format = "{utilization}"
+info = 20
+warning = 50
+critical = 90
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+
+
+# Uncomment below to enable battery
+[[block]]
+block = "battery"
+interval = 10
+format = " {percentage}"
+full_format = " {percentage}"
+hide_missing = true
+driver = "sysfs"
+
+[[block]]
+block = "rofication"
+interval = 1
+socket_path = "/tmp/rofi_notification_daemon"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+
+#[[block]]
+#block = "custom"
+#command = "sed 's/ //' <(curl 'https://wttr.in/$(curl ipinfo.io/city 2> /dev/null | tr -d ' ' )?format=1' -s)"
+#interval = 600
+
+[[block]]
+block = "time"
+interval = 5
+format = "%A, %B %d, %Y | %I:%m %p"
+
