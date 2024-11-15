@@ -20,6 +20,7 @@ args = parser.parse_args()
 # file to store prayer times for the month
 home = os.path.expanduser('~')
 filename = f'{home}/.local/bin/calendar/{datetime.datetime.now().strftime("%Y-%m")}.json'
+filename_ip = f'{home}/.local/bin/calendar/{datetime.datetime.now().strftime("%Y-%m")}-ip.txt'
 
 convert_from = "%H:%M"
 wanted_time_format = "%I:%M %p"
@@ -51,6 +52,8 @@ def initialize(force=False):
             html = response.read()
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(json.loads(html), f, ensure_ascii=False, indent=4)
+        with open(filename_ip, 'w') as f:
+            f.write(f'latitude={ip[0]},longitute={ip[1]}')
 
     data = json.load(open(filename, encoding='utf-8'))
     data_today = data['data'][datetime.datetime.now().day-1]

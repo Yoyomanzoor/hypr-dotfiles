@@ -45,6 +45,8 @@ alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
 
 alias vim 'nvim'
+alias v 'nvim'
+alias n 'nvim'
 alias conda 'micromamba'
 
 alias mpvm 'mpv --no-video '
