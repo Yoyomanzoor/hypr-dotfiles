@@ -1,4 +1,5 @@
 "custom/cava": {
-	"exec": "waybar_cava.sh",
-	"format": "{}"
+        "exec": "waybar_cava.sh",
+        "format": "{}",
+        "rotate": ${r_deg}
 },
