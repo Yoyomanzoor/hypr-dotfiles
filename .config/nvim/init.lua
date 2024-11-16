@@ -1109,20 +1109,24 @@ require("lazy").setup({
 	},
 
 	-- notify
+	-- {
+	-- 	"rcarriga/nvim-notify",
+	-- 	config = function()
+	-- 		require("notify").setup({
+	-- 			background_colour = "FloatShadow",
+	-- 		})
+
+	-- 		vim.notify = require("notify")
+	-- 	end,
+	-- },
+
 	{
-		"rcarriga/nvim-notify",
+		"mrded/nvim-lsp-notify",
+		requires = { "rcarriga/nvim-notify" },
 		config = function()
 			require("notify").setup({
 				background_colour = "FloatShadow",
 			})
-			vim.notify = require("notify")
-		end,
-	},
-
-	{
-		"mrded/nvim-lsp-notify",
-		-- requires = { "rcarriga/nvim-notify" },
-		config = function()
 			require("lsp-notify").setup({
 				notify = require("notify"),
 				-- icons = {
@@ -1130,6 +1134,7 @@ require("lazy").setup({
 				-- 	done = "!", -- `= false` to disable only this icon
 				-- },
 			})
+			vim.notify = require("notify")
 		end,
 	},
 
