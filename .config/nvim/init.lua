@@ -150,6 +150,13 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.encoding = "utf-8"
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
@@ -158,6 +165,13 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+---- for obsidian
+-- 24 bit terminal colors
+vim.opt.termguicolors = true
+-- concealleevel
+vim.opt.conceallevel = 1
+----
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -176,6 +190,9 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- Save and quit while in normal mode
+vim.keymap.set("n", "Q", "<cmd>x<CR>")
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -206,6 +223,27 @@ vim.keymap.set("n", "<leader>bl", "<C-w><S-l>", { desc = "[B]uffer move right" }
 vim.keymap.set("n", "<leader>bj", "<C-w><S-j>", { desc = "[B]uffer move down" })
 vim.keymap.set("n", "<leader>bk", "<C-w><S-k>", { desc = "[B]uffer move up" })
 vim.keymap.set("n", "<leader>bo", "<C-w>o", { desc = "[B]uffer [O]nly" })
+
+-- open terminal in current directory
+-- vim.keymap.set("n", "<leader>tt", function()
+-- 	vim.cmd("vsplit")
+-- 	vim.cmd("vertical resize -130")
+-- 	vim.cmd("lcd %:p:h")
+-- 	vim.cmd("terminal")
+-- 	vim.cmd("startinsert")
+-- end, { desc = "[T]oggle [T]erminal" })
+
+-- -- NvChad keymaps
+-- vim.keymap.set("n", "<leader>h", function()
+-- 	require("nvchad.term").new({ pos = "sp" })
+-- end, { desc = "terminal new horizontal term" })
+--
+-- vim.keymap.set("n", "<leader>v", function()
+-- 	require("nvchad.term").new({ pos = "vsp" })
+-- end, { desc = "terminal new vertical term" })
+
+-- add groups to transparency plugin
+vim.g.transparent_groups = vim.list_extend(vim.g.transparent_groups or {}, { "StatusLine" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -334,6 +372,8 @@ require("lazy").setup({
 				{ "<leader>b", group = "[B]uffer" },
 				{ "<leader>c", group = "[C]ode", mode = { "n", "x" } },
 				{ "<leader>d", group = "[D]ocument" },
+				{ "<leader>f", group = "[F]ind or [Format]" },
+				{ "<leader>g", group = "[G]it" },
 				{ "<leader>r", group = "[R]ename" },
 				{ "<leader>s", group = "[S]earch" },
 				{ "<leader>w", group = "[W]orkspace" },
@@ -434,10 +474,13 @@ require("lazy").setup({
 				},
 			})
 
+			require("telescope").load_extension("media_files")
+			require("telescope").load_extension("notify")
+
 			-- Enable Telescope extensions if they are installed
 			pcall(require("telescope").load_extension, "fzf")
 			pcall(require("telescope").load_extension, "ui-select")
-			pcall(require("telescope").load_extension, "media_files")
+			-- pcall(require("telescope").load_extension, "media_files")
 
 			-- See `:help telescope.builtin`
 			local builtin = require("telescope.builtin")
@@ -452,6 +495,24 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+
+			-- git telescope keymaps
+			vim.keymap.set("n", "<leader>gs", function()
+				vim.cmd("lcd %:p:h")
+				vim.cmd("Telescope git_status")
+			end, { desc = "[G]it [S]tatus" })
+			vim.keymap.set("n", "<leader>gf", function()
+				vim.cmd("lcd %:p:h")
+				vim.cmd("Telescope git_files")
+			end, { desc = "[G]it [F]iles" })
+			vim.keymap.set("n", "<leader>gc", function()
+				vim.cmd("lcd %:p:h")
+				vim.cmd("Telescope git_commits")
+			end, { desc = "[G]it [C]ommits" })
+			vim.keymap.set("n", "<leader>gb", function()
+				vim.cmd("lcd %:p:h")
+				vim.cmd("Telescope git_branches")
+			end, { desc = "[G]it [B]ranches" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
@@ -475,6 +536,8 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim files" })
+
+			vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
 		end,
 	},
 
@@ -511,7 +574,8 @@ require("lazy").setup({
 
 			-- Useful status updates for LSP.
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-			{ "j-hui/fidget.nvim", opts = {} },
+			-- { "j-hui/fidget.nvim", opts = {} },
+			-- { "mrded/nvim-lsp-notify" },
 
 			-- Allows extra capabilities provided by nvim-cmp
 			"hrsh7th/cmp-nvim-lsp",
@@ -642,14 +706,57 @@ require("lazy").setup({
 				end,
 			})
 
-			-- Change diagnostic symbols in the sign column (gutter)
-			-- if vim.g.have_nerd_font then
-			--   local signs = { Error = '', Warn = '', Hint = '', Info = '' }
-			--   for type, icon in pairs(signs) do
-			--     local hl = 'DiagnosticSign' .. type
-			--     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-			--   end
+			-- LSP integration
+			-- Make sure to also have the snippet with the common helper functions in your config!
+
+			-- vim.lsp.handlers["$/progress"] = function(_, result, ctx)
+			-- 	local client_id = ctx.client_id
+
+			-- 	local val = result.value
+
+			-- 	if not val.kind then
+			-- 		return
+			-- 	end
+
+			-- 	local notif_data = get_notif_data(client_id, result.token)
+
+			-- 	if val.kind == "begin" then
+			-- 		local message = format_message(val.message, val.percentage)
+
+			-- 		notif_data.notification = vim.notify(message, "info", {
+			-- 			title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
+			-- 			icon = spinner_frames[1],
+			-- 			timeout = false,
+			-- 			hide_from_history = false,
+			-- 		})
+
+			-- 		notif_data.spinner = 1
+			-- 		update_spinner(client_id, result.token)
+			-- 	elseif val.kind == "report" and notif_data then
+			-- 		notif_data.notification = vim.notify(format_message(val.message, val.percentage), "info", {
+			-- 			replace = notif_data.notification,
+			-- 			hide_from_history = false,
+			-- 		})
+			-- 	elseif val.kind == "end" and notif_data then
+			-- 		notif_data.notification =
+			-- 			vim.notify(val.message and format_message(val.message) or "Complete", "info", {
+			-- 				icon = "",
+			-- 				replace = notif_data.notification,
+			-- 				timeout = 3000,
+			-- 			})
+
+			-- 		notif_data.spinner = nil
+			-- 	end
 			-- end
+
+			-- Change diagnostic symbols in the sign column (gutter)
+			if vim.g.have_nerd_font then
+				local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+				for type, icon in pairs(signs) do
+					local hl = "DiagnosticSign" .. type
+					vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+				end
+			end
 
 			-- LSP servers and clients are able to communicate to each other what features they support.
 			--  By default, Neovim doesn't support everything that is in the LSP specification.
@@ -728,18 +835,31 @@ require("lazy").setup({
 		end,
 	},
 
+	-- {
+	-- 	"mrded/nvim-lsp-notify",
+	-- 	dependencies = { "rcarriga/nvim-notify" },
+	-- 	config = function()
+	-- 		require("lsp-notify").setup({
+	-- 			icons = {
+	-- 				spinner = { "|", "/", "-", "\\" }, -- `= false` to disable only this icon
+	-- 				done = "!", -- `= false` to disable only this icon
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+
 	{ -- Autoformat
 		"stevearc/conform.nvim",
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
 		keys = {
 			{
-				"<leader>ff",
+				"<leader>fb",
 				function()
 					require("conform").format({ async = true, lsp_format = "fallback" })
 				end,
 				mode = "",
-				desc = "[F]ormat buffer",
+				desc = "[F]ormat [B]uffer",
 			},
 		},
 		opts = {
@@ -827,9 +947,9 @@ require("lazy").setup({
 				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
 					-- Select the [n]ext item
-					["<C-n>"] = cmp.mapping.select_next_item(),
+					-- ["<C-n>"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item
-					["<C-p>"] = cmp.mapping.select_prev_item(),
+					-- ["<C-p>"] = cmp.mapping.select_prev_item(),
 
 					-- Scroll the documentation window [b]ack / [f]orward
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -838,13 +958,13 @@ require("lazy").setup({
 					-- Accept ([y]es) the completion.
 					--  This will auto-import if your LSP supports it.
 					--  This will expand snippets if the LSP sent a snippet.
-					["<C-y>"] = cmp.mapping.confirm({ select = true }),
+					-- ["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
 					-- If you prefer more traditional completion keymaps,
 					-- you can uncomment the following lines
-					--['<CR>'] = cmp.mapping.confirm { select = true },
-					--['<Tab>'] = cmp.mapping.select_next_item(),
-					--['<S-Tab>'] = cmp.mapping.select_prev_item(),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<Tab>"] = cmp.mapping.select_next_item(),
+					["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
 					-- Manually trigger a completion from nvim-cmp.
 					--  Generally you don't need this, because nvim-cmp will display
@@ -901,11 +1021,13 @@ require("lazy").setup({
 				evaluate_single = true,
 				footer = os.date(),
 				header = table.concat({
-					[[  /\ \▔\___  ___/\   /(●)_ __ ___  ]],
-					[[ /  \/ / _ \/ _ \ \ / / | '_ ` _ \ ]],
-					[[/ /\  /  __/ (_) \ V /| | | | | | |]],
-					[[\_\ \/ \___|\___/ \_/ |_|_| |_| |_|]],
-					[[───────────────────────────────────]],
+					[[/\   __                                ]],
+					[[\ \_/ /__  _   _  ___/\  /🪀 _ __ ___  ]],
+					[[ \   / _ \| | | |/ _ \ \/ / | '_ ` _ \ ]],
+					[[  | | (_) | |_| | (_) \  /| | | | | | |]],
+					[[  |_|\___/ \__, |\___/ \/ |_|_| |_| |_|]],
+					[[__________  __/ |  ____________________]],
+					[[           |___/                       ]],
 				}, "\n"),
 				query_updaters = [[abcdefghilmoqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMOQRSTUVWXYZ]],
 				items = {
@@ -913,7 +1035,8 @@ require("lazy").setup({
 					starter.sections.recent_files(5, true),
 					starter.sections.recent_files(5, false),
 					{
-						action = "Telescope file_browser hidden=true no_ignore=true",
+						-- action = "Telescope file_browser hidden=true no_ignore=true",
+						action = "Ranger",
 						name = "B: File Browser",
 						section = "Telescope",
 					},
@@ -937,30 +1060,31 @@ require("lazy").setup({
           au!
           au User MiniStarterOpened nmap <buffer> j <Cmd>lua MiniStarter.update_current_item('next')<CR>
           au User MiniStarterOpened nmap <buffer> k <Cmd>lua MiniStarter.update_current_item('prev')<CR>
-          au User MiniStarterOpened nmap <buffer> <C-b> <Cmd>Telescope find_files<CR>
-          au User MiniStarterOpened nmap <buffer> <C-f> <Cmd>Telescope file_browser<CR>
+          au User MiniStarterOpened nmap <buffer> <C-f> <Cmd>Telescope find_files<CR>
+          au User MiniStarterOpened nmap <buffer> <C-b> <Cmd>Ranger<CR>
+          "au User MiniStarterOpened nmap <buffer> <C-f> <Cmd>Telescope file_browser<CR>
         augroup END
       ]])
 		end,
 	},
 
-	{ -- You can easily change to a different colorscheme.
-		-- Change the name of the colorscheme plugin below, and then
-		-- change the command in the config to whatever the name of that colorscheme is.
-		--
-		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-		"folke/tokyonight.nvim",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
-		init = function()
-			-- Load the colorscheme here.
-			-- Like many other themes, this one has different styles, and you could load
-			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyonight-night")
-
-			-- You can configure highlights by doing something like:
-			vim.cmd.hi("Comment gui=none")
-		end,
-	},
+	-- { -- You can easily change to a different colorscheme.
+	-- 	-- Change the name of the colorscheme plugin below, and then
+	-- 	-- change the command in the config to whatever the name of that colorscheme is.
+	-- 	--
+	-- 	-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+	-- 	"folke/tokyonight.nvim",
+	-- 	priority = 1000, -- Make sure to load this before all the other start plugins.
+	-- 	init = function()
+	-- 		-- Load the colorscheme here.
+	-- 		-- Like many other themes, this one has different styles, and you could load
+	-- 		-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+	-- 		vim.cmd.colorscheme("tokyonight-night")
+	--
+	-- 		-- You can configure highlights by doing something like:
+	-- 		vim.cmd.hi("Comment gui=none")
+	-- 	end,
+	-- },
 
 	-- Highlight todo, notes, etc in comments
 	{
@@ -969,6 +1093,89 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
 	},
+
+	-- Don't hurt your neck
+	{
+		"shortcuts/no-neck-pain.nvim",
+		config = function()
+			-- vim.keymap.set("n", "<F2>", "<Cmd>NoNeckPain<CR>")
+			vim.keymap.set("n", "<F11>", "<Cmd>NoNeckPain<CR>")
+		end,
+	},
+
+	-- Make background transparent
+	{
+		"xiyaowong/transparent.nvim",
+	},
+
+	-- notify
+	-- {
+	-- 	"rcarriga/nvim-notify",
+	-- 	config = function()
+	-- 		require("notify").setup({
+	-- 			background_colour = "FloatShadow",
+	-- 		})
+
+	-- 		vim.notify = require("notify")
+	-- 	end,
+	-- },
+
+	{
+		"mrded/nvim-lsp-notify",
+		requires = { "rcarriga/nvim-notify" },
+		config = function()
+			require("notify").setup({
+				background_colour = "FloatShadow",
+			})
+			require("lsp-notify").setup({
+				notify = require("notify"),
+				-- icons = {
+				-- 	spinner = { "|", "/", "-", "\\" }, -- `= false` to disable only this icon
+				-- 	done = "!", -- `= false` to disable only this icon
+				-- },
+			})
+			vim.notify = require("notify")
+		end,
+	},
+
+	{
+		"kelly-lin/ranger.nvim",
+		config = function()
+			local ranger_nvim = require("ranger-nvim")
+			ranger_nvim.setup({
+				replace_netrw = true,
+				enable_cmds = true,
+				keybinds = {
+					["ov"] = ranger_nvim.OPEN_MODE.vsplit,
+					["oh"] = ranger_nvim.OPEN_MODE.split,
+					["ot"] = ranger_nvim.OPEN_MODE.tabedit,
+					["or"] = ranger_nvim.OPEN_MODE.rifle,
+				},
+				ui = {
+					border = "rounded",
+					height = 0.8,
+					width = 0.8,
+					x = 0.5,
+					y = 0.5,
+				},
+			})
+			vim.api.nvim_set_keymap("n", "<leader>ff", "", {
+				noremap = true,
+				callback = function()
+					require("ranger-nvim").open(true)
+				end,
+				desc = "[F]ind [F]iles (with ranger)",
+			})
+		end,
+	},
+
+	-- NvChad terminal
+	-- {
+	-- 	"NvChad/nvterm",
+	-- 	config = function()
+	-- 		require("nvterm").setup()
+	-- 	end,
+	-- },
 
 	{ -- Collection of various small independent plugins/modules
 		"echasnovski/mini.nvim",
@@ -1060,6 +1267,11 @@ require("lazy").setup({
 	require("kickstart.plugins.autopairs"),
 	-- require 'kickstart.plugins.neo-tree',
 	require("kickstart.plugins.gitsigns"), -- adds gitsigns recommend keymaps
+
+	require("custom.plugins.obsidian"),
+	require("custom.plugins.pomo"),
+	require("custom.plugins.comment"),
+	require("custom.plugins.floatingterm"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.

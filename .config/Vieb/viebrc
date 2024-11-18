@@ -1,6 +1,8 @@
 set darkreader=true
 set darkreaderblocklist+=github
 set darkreaderblocklist+=reddit
+set darkreaderblocklist+=youtube
+set darkreaderblocklist+=stackoverflow
 set guinavbar=onupdate
 set guitabbar=onupdate
 
