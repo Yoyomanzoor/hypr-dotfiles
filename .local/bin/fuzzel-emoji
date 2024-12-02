@@ -1,9 +1,9 @@
 #!/bin/bash
 if [ $? -eq 0 ]
 then
-    sed '1,/^### DATA ###$/d' $0 | fuzzel --dmenu | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
+    sed '1,/^### DATA ###$/d' $0 | fuzzel --match-mode fzf --dmenu | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
 else
-    sed '1,/^### DATA ###$/d' $0 | fuzzel --dmenu | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
+    sed '1,/^### DATA ###$/d' $0 | fuzzel --match-mode fzf --dmenu | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
 fi
 exit
 ### DATA ###
@@ -13,60 +13,14 @@ exit
 → right arrow
 ↓ down arrow
 ←↑→↓ all directions up down left right arrows
-↖ up left arrow
-↗ up right arrow
-↘ down right arrow
-↙ down left arrow
-↔ left right arrow
-↕ up down arrow
-⇒ right arrow with hook
-⇔ left right arrow
-⇐ left arrow with hook
-⇑ up arrow with hook
-⇓ down arrow with hook
-≥ greater than or equal to math
-≤ less than or equal to math
-≠ not equal to math
-≈ approximately equal to math
-∞ infinity math
-√ square root math
-∛ cube root math
-∜ fourth root math
-∑ summation math
-∏ product math
-∫ integral math
-∆ delta math
-∇ nabla math
-∴ therefore math
-α alpha greek math
-β beta greek math
-γ gamma greek math
-δ delta greek math
-ε epsilon greek math
-ζ zeta greek math
-η eta greek math
-θ theta greek math
-ι iota greek math
-κ kappa greek math
-λ lambda greek math
-μ mu greek math
-ν nu greek math
-ξ xi greek math
-ο omicron greek math
-π pi greek math
-ρ rho greek math
-σ sigma greek math
-τ tau greek math
-υ upsilon greek math
-φ phi greek math
-χ chi greek math
-ψ psi greek math
-ω omega greek math
 AH↗️HA↘️HA↗️HA↘️HA↗️HA↘️HA↗️HA↘️ pekora arrows hahaha rabbit
 • dot circle separator
 「」 japanese quote square bracket
 ¯\_(ツ)_/¯ shrug idk i dont know
 ↵ enter key return
+𝕏  twitter x logo
+👉👈 etou ughhhhhhh shy
+👉👌 put it in imagination perv
 😀 grinning face face smile happy joy :D grin
 😃 grinning face with big eyes face happy joy haha :D :) smile funny
 😄 grinning face with smiling eyes face happy joy funny haha laugh like :D :) smile

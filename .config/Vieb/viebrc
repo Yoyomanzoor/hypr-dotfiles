@@ -4,7 +4,7 @@ set guitabbar=onupdate
 
 map <A-t> <:set guitabbar=onupdate>
 map <A-r> <:set guitabbar=always>
-nmap b <toCommandMode>b 
+nmap b <toCommandMode>b<Space>
 nmap o <toExploreMode>
 nmap O <:tabnew><toExploreMode>
 
@@ -26,3 +26,4 @@ set timeout
 set timeoutlen=1000
 set vimcommand=nvim
 
+set darkreaderblocklist=["reddit", "github"]
