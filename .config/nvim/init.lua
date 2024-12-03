@@ -166,12 +166,25 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- column marker
+vim.opt.colorcolumn = "80"
+
 ---- for obsidian
 -- 24 bit terminal colors
 vim.opt.termguicolors = true
 -- concealleevel
 vim.opt.conceallevel = 1
 ----
+
+-- spellchecker
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
+local function toggle_spell_check()
+    vim.opt.spell = not(vim.opt.spell:get())
+end
+vim.keymap.set("n", "<Leader>sp", function()
+    vim.opt.spell = not(vim.opt.spell:get())
+end, { desc = "Toggle [Sp]ell check" })
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -241,6 +254,7 @@ vim.keymap.set("n", "<leader>bo", "<C-w>o", { desc = "[B]uffer [O]nly" })
 -- vim.keymap.set("n", "<leader>v", function()
 -- 	require("nvchad.term").new({ pos = "vsp" })
 -- end, { desc = "terminal new vertical term" })
+
 
 -- add groups to transparency plugin
 vim.g.transparent_groups = vim.list_extend(vim.g.transparent_groups or {}, { "StatusLine" })
@@ -456,13 +470,50 @@ require("lazy").setup({
 			require("telescope").setup({
 				-- You can put your default mappings / updates / etc. in here
 				--  All the info you're looking for is in `:help telescope.setup()`
-				--
-				-- defaults = {
-				--   mappings = {
-				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-				--   },
-				-- },
-				-- pickers = {}
+
+				defaults = {
+          vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden',
+
+            -- Exclude some patterns from search
+            "--glob=!**/.git/*",
+            "--glob=!**/.idea/*",
+            "--glob=!**/.vscode/*",
+            "--glob=!**/build/*",
+            "--glob=!**/dist/*",
+            "--glob=!**/yarn.lock",
+            "--glob=!**/package-lock.json",
+          },
+				  -- mappings = {
+				  --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+				  -- },
+				},
+				pickers = {
+          ["find-files"] = {
+            hidden = true,
+            -- needed to exclude some files & dirs from general search
+            -- when not included or specified in .gitignore
+            find_command = {
+              "rg",
+              "--files",
+              "--hidden",
+              "--glob=!**/.git/*",
+              "--glob=!**/.idea/*",
+              "--glob=!**/.vscode/*",
+              "--glob=!**/build/*",
+              "--glob=!**/dist/*",
+              "--glob=!**/yarn.lock",
+              "--glob=!**/package-lock.json",
+            },
+          },
+        },
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
@@ -471,8 +522,8 @@ require("lazy").setup({
 						filetypes = { "png", "jpg", "mp4", "webm", "pdf" },
 						find_cmd = "rg",
 					},
-				},
-			})
+        },
+      })
 
 			require("telescope").load_extension("media_files")
 			require("telescope").load_extension("notify")
@@ -487,7 +538,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-			vim.keymap.set("n", "<leader>sa", builtin.fd, { desc = "[S]earch [A]ll files" })
+			-- vim.keymap.set("n", "<leader>sa", builtin.fd, { desc = "[S]earch [A]ll files" })
 			vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 			vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
@@ -513,6 +564,9 @@ require("lazy").setup({
 				vim.cmd("lcd %:p:h")
 				vim.cmd("Telescope git_branches")
 			end, { desc = "[G]it [B]ranches" })
+			vim.keymap.set("n", "<leader>sa", function()
+        vim.cmd("Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍")
+      end, { desc = "[S]earch [A]ll files" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
@@ -1060,7 +1114,7 @@ require("lazy").setup({
           au!
           au User MiniStarterOpened nmap <buffer> j <Cmd>lua MiniStarter.update_current_item('next')<CR>
           au User MiniStarterOpened nmap <buffer> k <Cmd>lua MiniStarter.update_current_item('prev')<CR>
-          au User MiniStarterOpened nmap <buffer> <C-f> <Cmd>Telescope find_files<CR>
+          au User MiniStarterOpened nmap <buffer> <C-f> <Cmd>Telescope find_files hidden=true no_ignore=true<CR>
           au User MiniStarterOpened nmap <buffer> <C-b> <Cmd>Ranger<CR>
           "au User MiniStarterOpened nmap <buffer> <C-f> <Cmd>Telescope file_browser<CR>
         augroup END
@@ -1250,6 +1304,7 @@ require("lazy").setup({
 		--    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
 		--    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
 		--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+
 	},
 
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
@@ -1274,7 +1329,9 @@ require("lazy").setup({
 	require("custom.plugins.floatingterm"),
 	require("custom.plugins.rose-pine"),
 	require("custom.plugins.colorizer"),
-	require("custom.plugins.sessions"),
+	-- require("custom.plugins.sessions"),
+  require("custom.plugins.r"),
+
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.
@@ -1307,6 +1364,8 @@ require("lazy").setup({
 		},
 	},
 })
+
+vim.cmd("colorscheme rose-pine-main")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

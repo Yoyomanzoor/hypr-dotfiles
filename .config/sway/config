@@ -19,7 +19,7 @@ bar {
 # set $wm.program.browser wm.program.browser gtk-launch $(xdg-settings get default-web-browser)
 # bindsym $mod+Shift+Return exec --no-startup-id systemd-run --user --scope $wm.program.browser
 
-output eDP-1 pos 0 0 res 2560x1600
+output eDP-1 pos 0 0 res 2160x1350 scale 1
 output HDMI-A-1 pos 2560 0 res 3440x1440@100Hz
 
 workspace 1 output eDP-1
@@ -151,8 +151,8 @@ workspace_auto_back_and_forth no
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+period exec --no-startup-id pkill -USR1 -F "${XDG_RUNTIME_DIR}/swap_focus.pid"
-exec --no-startup-id i3-swap-focus
+# bindsym $mod+period exec --no-startup-id pkill -USR1 -F "${XDG_RUNTIME_DIR}/swap_focus.pid"
+# exec --no-startup-id i3-swap-focus
 
 mode "Resize Mode" {
     bindsym h resize shrink width 6 px or 6 ppt
@@ -208,7 +208,7 @@ for_window [app_id=".*"] inhibit_idle fullscreen
 
 bindsym --locked XF86AudioRaiseVolume exec volumectl up 5
 bindsym --locked XF86AudioLowerVolume exec volumectl down 5
-bindsym --locked XF86AudioMute exec volumectl toggle
+# bindsym --locked XF86AudioMute exec volumectl toggle
 # bindsym --locked XF86AudioMicMute exec volumectl -m %
 bindcode --locked 172 exec playerctl play-pause
 bindcode --locked 208 exec playerctl play
@@ -252,6 +252,9 @@ bindsym $mod+P exec --no-startup-id nwg-displays
 # cursor_trail 3
 mouse_warping container
 focus_follows_mouse yes
+
+# emojis
+bindsym $mod+period exec bash ~/.local/bin/fuzzel-emoji
 
 set $opacity 1
 for_window [class=".*"] opacity $opacity

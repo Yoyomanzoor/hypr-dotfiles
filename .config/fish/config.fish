@@ -49,6 +49,8 @@ alias v 'nvim'
 alias n 'nvim'
 alias conda 'micromamba'
 
+alias r "R_AUTO_START=true nvim"
+
 alias mpvm 'mpv --no-video '
 alias home '/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
