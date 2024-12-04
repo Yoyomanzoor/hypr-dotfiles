@@ -28,25 +28,25 @@ button:focus, button:active, button:hover {
 }
 
 #lock {
-    background-image: image(url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/lock.png"), url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/lock.png"));
+    background-image: image(url("./icons/lock.png"), url("./icons/lock.png"));
 }
 
 #logout {
-    background-image: image(url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/gout.png"), url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/logout.png"));
+    background-image: image(url("./icons/logout.png"), url("./icons/logout.png"));
 }
 
 #suspend {
-    background-image: image(url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/pend.png"), url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/suspend.png"));
+    background-image: image(url("./icons/suspend.png"), url("./icons/suspend.png"));
 }
 
 #hibernate {
-    background-image: image(url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/nate.png"), url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/hibernate.png"));
+    background-image: image(url("./icons/hibernate.png"), url("./icons/hibernate.png"));
 }
 
 #shutdown {
-    background-image: image(url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/down.png"), url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/shutdown.png"));
+    background-image: image(url("./icons/shutdown.png"), url("./icons/shutdown.png"));
 }
 
 #reboot {
-    background-image: image(url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/boot.png"), url("/nix/store/d4hk78akp5zbagz38100ad7qx44fl6qw-wlogout-1.2.2/share/wlogout/icons/reboot.png"));
+    background-image: image(url("./icons/reboot.png"), url("./icons/reboot.png"));
 }
