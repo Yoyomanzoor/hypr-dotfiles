@@ -3,6 +3,7 @@ set darkreaderblocklist+=github
 set darkreaderblocklist+=reddit
 set darkreaderblocklist+=youtube
 set darkreaderblocklist+=stackoverflow
+set darkreaderblocklist+=duckduckgo
 set guinavbar=onupdate
 set guitabbar=onupdate
 

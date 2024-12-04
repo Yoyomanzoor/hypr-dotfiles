@@ -1,0 +1,31 @@
+# Yoyomanzoor tmux config
+
+### Prefix
+unbind C-b
+set-option -g prefix C-Space
+
+### Movement
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+### Split
+unbind '"'
+unbind %
+bind s split-window -h -c "#{pane_current_path}"
+bind v split-window -v -c "#{pane_current_path}"
+
+### Resize
+# bind S-h resize-pane -L 10
+# bind S-l resize-pane -R 10
+# bind S-j resize-pane -D 10
+# bind S-k resize-pane -U 10
+
+### Battery
+set -g status-right '#{battery_status_bg} Batt: #{battery_icon} #{battery_percentage} #{battery_remain} | %a %h-%d %I:%M %p'
+
