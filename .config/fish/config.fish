@@ -1,11 +1,26 @@
 set -gx EDITOR nvim
-set -g fish_greeting
+# set -g fish_greeting
+
+if string match -qir '.*\.utf-?8' -- $LANG $LC_CTYPE
+    set -l animal_marine 🐡 🐠 🐟 🐬 🐳 🐋 🦈 🐙 🦑 🦦 🪼 🪸 🦩
+    set -l animal_reptile 🐢 🐊
+    set -l food_marine 🦐 🦞 🦀
+
+    set fishes $animal_marine $animal_reptile $food_marine
+
+    function fishes_greeting
+       echo (random choice $fishes; random choice $fishes; random choice $fishes)
+    end
+
+    set fish_greeting (fishes_greeting)
+end
 
 if status is-interactive
     starship init fish | source
 end
 
 # List Directory
+alias l 'eza -al --color=always --group-directories-first --icons=auto' # preferred listing
 alias ls 'eza -al --color=always --group-directories-first --icons=auto' # preferred listing
 alias la 'eza -a --color=always --group-directories-first --icons=auto'  # all files and dirs
 alias ll 'eza -lha --color=always --group-directories-first --icons=auto --sort=name'  # long format
@@ -20,6 +35,11 @@ abbr .3 'cd ../../..'
 abbr .4 'cd ../../../..'
 abbr .5 'cd ../../../../..'
 
+abbr vim 'nvim'
+abbr v 'nvim'
+abbr n 'nvim'
+
+abbr mpvm 'mpv --no-video '
 
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 abbr mkdir 'mkdir -p'
@@ -44,12 +64,8 @@ alias upd '/usr/bin/garuda-update'
 alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
 
-alias vim 'nvim'
-alias v 'nvim'
-alias n 'nvim'
 alias conda 'micromamba'
 
-alias mpvm 'mpv --no-video '
 alias home '/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
 # Get the error messages from journalctl
