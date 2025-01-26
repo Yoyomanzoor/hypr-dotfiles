@@ -28,6 +28,9 @@ alias lt 'eza --icons=auto --tree' # list folder as tree
 alias ltt 'eza -aT --color=always --group-directories-first --icons=auto' # tree listing
 alias l. 'eza -ald --color=always --group-directories-first --icons=auto .*' # show only dotfiles
 
+# tmux
+# abbr tmux 'TERM=screen-256color tmux'
+
 # Handy change dir shortcuts
 abbr .. 'cd ..'
 abbr ... 'cd ../..'
