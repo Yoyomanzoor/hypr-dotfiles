@@ -51,14 +51,14 @@ visited_anchor 1
 visited_color magenta
 pagerline 10000
 use_history 1
-history 100
+history 1000
 save_hist 1
 confirm_qq 1
 close_tab_back 0
 mark 0
 emacs_like_lineedit 0
 space_autocomplete 0
-vi_prec_num 0
+vi_prec_num 1
 mark_all_pages 0
 wrap_search 1
 ignorecase_search 1
@@ -80,7 +80,7 @@ tmp_dir
 mime_types ~/.mime.types, /usr/etc/mime.types
 mailcap ~/.w3m/mailcap, /usr/etc/w3m/mailcap
 urimethodmap ~/.w3m/urimethodmap, /usr/etc/w3m/urimethodmap
-editor /usr/bin/vi
+editor /usr/bin/nvim
 mailto_options 1
 mailer /usr/bin/mail
 extbrowser xdg-open %s &

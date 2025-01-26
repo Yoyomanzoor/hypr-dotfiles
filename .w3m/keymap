@@ -177,9 +177,7 @@ keymap u PREV_PAGE
 keymap zz CENTER_V
 ########## cursor ##########
 keymap l MOVE_RIGHT
-keymap J NEXT_TAB
 keymap h MOVE_LEFT
-keymap K PREV_TAB
 #keymap j MOVE_DOWN1
 keymap j UP
 #keymap k MOVE_UP1
@@ -242,6 +240,8 @@ keymap x CLOSE_TAB
 keymap gs GOTO http://www.duckduckgo.com
 keymap gS TAB_GOTO http://www.duckduckgo.com
 keymap C-t NEW_TAB
+keymap J NEXT_TAB
+keymap K PREV_TAB
 keymap gt NEXT_TAB
 keymap gT PREV_TAB
 keymap C-i NEXT_TAB
