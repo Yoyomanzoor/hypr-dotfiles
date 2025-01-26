@@ -117,8 +117,8 @@ vim.keymap.set("n", "<A-k>", "<cmd>resize -5<CR>", { desc = "Resize down" })
 vim.keymap.set("n", "<A-r>", "<C-w>=", { desc = "Reset resize" })
 
 vim.keymap.set("n", "<leader>bs", "<cmd>sp<CR>", { desc = "[B]uffer [S]plit" })
-vim.keymap.set("n", "<leader>bb", "<cmd>sp<CR>", { desc = "[B]uffer [S]plit" })
-vim.keymap.set("n", "<leader>bv", "<cmd>vsp<CR>", { desc = "[B]uffer [V]ertical split" })
+vim.keymap.set("n", "<leader>h", "<cmd>sp<CR>", { desc = "[B]uffer [H]orizontal split" })
+vim.keymap.set("n", "<leader>v", "<cmd>vsp<CR>", { desc = "[B]uffer [V]ertical split" })
 vim.keymap.set("n", "<leader>bh", "<C-w><S-h>", { desc = "[B]uffer move left" })
 vim.keymap.set("n", "<leader>bl", "<C-w><S-l>", { desc = "[B]uffer move right" })
 vim.keymap.set("n", "<leader>bj", "<C-w><S-j>", { desc = "[B]uffer move down" })
@@ -1154,6 +1154,7 @@ require("lazy").setup({
 			--  Check out: https://github.com/echasnovski/mini.nvim
 		end,
 	},
+
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -1190,6 +1191,14 @@ require("lazy").setup({
 		--    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
 		--    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
 		--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+	},
+
+	{
+		"yuratomo/w3m.vim",
+		event = "VeryLazy",
+		config = function()
+			vim.g["w3m#search_engine"] = "https://duckduckgo.com/?q=%s"
+		end,
 	},
 
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
