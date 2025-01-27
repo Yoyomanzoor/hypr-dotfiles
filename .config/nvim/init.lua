@@ -1198,6 +1198,45 @@ require("lazy").setup({
 		event = "VeryLazy",
 		config = function()
 			vim.g["w3m#search_engine"] = "https://duckduckgo.com/?q=%s"
+			-- vim.g["w3m#search_engine"] = "%s"
+			vim.g["w3m#external_browser"] = "vieb"
+			vim.keymap.set("n", "<leader>e", ":W3m ", { desc = "Search the web" })
+			vim.keymap.set("n", "<leader>E", "<cmd>W3mAddressBar<CR>", { desc = "Open Address Bar" })
+			vim.keymap.set("n", "<leader>wy", function()
+				vim.cmd("call w3m#ShowURL()")
+				local status_msg = vim.v.statusmsg
+				local url = status_msg:match("w3m:%s*(.+)")
+				if url then
+					vim.fn.setreg("+", url)
+				else
+					print("Failed to print url")
+				end
+			end, { desc = "[W]eb [Y]ank URL" })
+			vim.keymap.set("n", "<leader>ws", function()
+				local clipboard_content = vim.fn.getreg("+")
+				if clipboard_content == "" then
+					print("Clipboard is empty, copy a URL fragment first")
+					return
+				end
+				local url = "http://" .. clipboard_content
+				print(url)
+				vim.cmd("W3m " .. url)
+			end, { desc = "[W]eb [S]earch URL" })
+			vim.keymap.set("n", "<leader>wd", function()
+				-- local word = vim.fn.expand("<cword>")
+				-- word = word:match("^ *(.-) *$")
+				vim.cmd("normal! vE")
+				vim.cmd('normal! "+y')
+				local word = vim.fn.getreg("+")
+				if word == "" then
+					print("No word undor cursor to search")
+					return
+				end
+				vim.fn.setreg("+", word)
+				local url = "http://" .. word
+				print(url)
+				vim.cmd("W3m " .. url)
+			end, { desc = "[W]eb [D]uckduckgo search URL" })
 		end,
 	},
 
