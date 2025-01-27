@@ -87,6 +87,9 @@ vim.opt.conceallevel = 1
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- quick exit buffer
+vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>")
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
@@ -262,7 +265,7 @@ require("lazy").setup({
 				{ "<leader>g", group = "[G]it" },
 				{ "<leader>r", group = "[R]ename" },
 				{ "<leader>s", group = "[S]earch" },
-				{ "<leader>w", group = "[W]orkspace" },
+				{ "<leader>w", group = "[W]eb" },
 				{ "<leader>t", group = "[T]oggle" },
 				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 			},
@@ -517,11 +520,7 @@ require("lazy").setup({
 
 					-- Fuzzy find all the symbols in your current workspace.
 					--  Similar to document symbols, except searches over your entire project.
-					map(
-						"<leader>ws",
-						require("telescope.builtin").lsp_dynamic_workspace_symbols,
-						"[W]orkspace [S]ymbols"
-					)
+					map("<leader>cs", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[C]ode [S]ymbols")
 
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
@@ -1197,11 +1196,21 @@ require("lazy").setup({
 		"yuratomo/w3m.vim",
 		event = "VeryLazy",
 		config = function()
-			vim.g["w3m#search_engine"] = "https://duckduckgo.com/?q=%s"
 			-- vim.g["w3m#search_engine"] = "%s"
+			vim.g["w3m#search_engine"] = "https://duckduckgo.com/?q=%s"
 			vim.g["w3m#external_browser"] = "vieb"
 			vim.keymap.set("n", "<leader>e", ":W3m ", { desc = "Search the web" })
 			vim.keymap.set("n", "<leader>E", "<cmd>W3mAddressBar<CR>", { desc = "Open Address Bar" })
+			vim.keymap.set("n", "<leader>wr", "<cmd>W3mReload<CR>", { desc = "[W]eb [R]eload" })
+			vim.keymap.set("n", "<leader>wh", "<cmd>W3mHistory<CR>", { desc = "[W]eb [H]istory" })
+			vim.keymap.set("n", "<leader>ws", ":W3mSplit ", { desc = "Search the web ([S]plit)" })
+			vim.keymap.set("n", "<leader>wv", ":W3mVSplit ", { desc = "Search the web ([V]split)" })
+			vim.keymap.set(
+				"n",
+				"<leader>we",
+				vim.cmd("call w3m#ShowExternalBrowser()"),
+				{ desc = "open in [E]xternal browser (vieb)" }
+			)
 			vim.keymap.set("n", "<leader>wy", function()
 				vim.cmd("call w3m#ShowURL()")
 				local status_msg = vim.v.statusmsg
@@ -1212,16 +1221,16 @@ require("lazy").setup({
 					print("Failed to print url")
 				end
 			end, { desc = "[W]eb [Y]ank URL" })
-			vim.keymap.set("n", "<leader>ws", function()
-				local clipboard_content = vim.fn.getreg("+")
-				if clipboard_content == "" then
-					print("Clipboard is empty, copy a URL fragment first")
-					return
-				end
-				local url = "http://" .. clipboard_content
-				print(url)
-				vim.cmd("W3m " .. url)
-			end, { desc = "[W]eb [S]earch URL" })
+			-- vim.keymap.set("n", "<leader>ww", function()
+			-- 	local clipboard_content = vim.fn.getreg("+")
+			-- 	if clipboard_content == "" then
+			-- 		print("Clipboard is empty, copy a URL fragment first")
+			-- 		return
+			-- 	end
+			-- 	local url = "http://" .. clipboard_content
+			-- 	print(url)
+			-- 	vim.cmd("W3m " .. url)
+			-- end, { desc = "[W]eb search URL from clipboard" })
 			vim.keymap.set("n", "<leader>wd", function()
 				-- local word = vim.fn.expand("<cword>")
 				-- word = word:match("^ *(.-) *$")
