@@ -1192,63 +1192,6 @@ require("lazy").setup({
 		--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 	},
 
-	{
-		"yuratomo/w3m.vim",
-		event = "VeryLazy",
-		config = function()
-			-- vim.g["w3m#search_engine"] = "%s"
-			vim.g["w3m#search_engine"] = "https://duckduckgo.com/?q=%s"
-			vim.g["w3m#external_browser"] = "vieb"
-			vim.keymap.set("n", "<leader>e", ":W3m ", { desc = "Search the web" })
-			vim.keymap.set("n", "<leader>E", "<cmd>W3mAddressBar<CR>", { desc = "Open Address Bar" })
-			vim.keymap.set("n", "<leader>wr", "<cmd>W3mReload<CR>", { desc = "[W]eb [R]eload" })
-			vim.keymap.set("n", "<leader>wh", "<cmd>W3mHistory<CR>", { desc = "[W]eb [H]istory" })
-			vim.keymap.set("n", "<leader>ws", ":W3mSplit ", { desc = "Search the web ([S]plit)" })
-			vim.keymap.set("n", "<leader>wv", ":W3mVSplit ", { desc = "Search the web ([V]split)" })
-			vim.keymap.set(
-				"n",
-				"<leader>we",
-				vim.cmd("call w3m#ShowExternalBrowser()"),
-				{ desc = "open in [E]xternal browser (vieb)" }
-			)
-			vim.keymap.set("n", "<leader>wy", function()
-				vim.cmd("call w3m#ShowURL()")
-				local status_msg = vim.v.statusmsg
-				local url = status_msg:match("w3m:%s*(.+)")
-				if url then
-					vim.fn.setreg("+", url)
-				else
-					print("Failed to print url")
-				end
-			end, { desc = "[W]eb [Y]ank URL" })
-			-- vim.keymap.set("n", "<leader>ww", function()
-			-- 	local clipboard_content = vim.fn.getreg("+")
-			-- 	if clipboard_content == "" then
-			-- 		print("Clipboard is empty, copy a URL fragment first")
-			-- 		return
-			-- 	end
-			-- 	local url = "http://" .. clipboard_content
-			-- 	print(url)
-			-- 	vim.cmd("W3m " .. url)
-			-- end, { desc = "[W]eb search URL from clipboard" })
-			vim.keymap.set("n", "<leader>wd", function()
-				-- local word = vim.fn.expand("<cword>")
-				-- word = word:match("^ *(.-) *$")
-				vim.cmd("normal! vE")
-				vim.cmd('normal! "+y')
-				local word = vim.fn.getreg("+")
-				if word == "" then
-					print("No word undor cursor to search")
-					return
-				end
-				vim.fn.setreg("+", word)
-				local url = "http://" .. word
-				print(url)
-				vim.cmd("W3m " .. url)
-			end, { desc = "[W]eb [D]uckduckgo search URL" })
-		end,
-	},
-
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
 	-- place them in the correct locations.
@@ -1271,6 +1214,9 @@ require("lazy").setup({
 	require("custom.plugins.floatingterm"),
 	require("custom.plugins.tmux-navigation"),
 	require("custom.plugins.yazi"),
+	require("custom.plugins.colorizer"),
+	require("custom.plugins.rose-pine"),
+	require("custom.plugins.w3m"),
 	-- require("mappings"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
