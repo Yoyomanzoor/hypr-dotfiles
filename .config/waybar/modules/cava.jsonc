@@ -1,5 +1,6 @@
 "custom/cava": {
-        "exec": "waybar_cava.sh",
-        "format": "{}",
-        "rotate": ${r_deg}
+	"format": "{}",
+	"exec": "waybar_cava.sh --stb=0",
+	"restart-interval": 1,
+	"hide-empty": true
 },
