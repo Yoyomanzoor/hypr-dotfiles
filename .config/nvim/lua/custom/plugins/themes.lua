@@ -32,9 +32,9 @@ local function themeswitcher(day_theme, night_theme)
 			-- print(v)
 			for s, l in string.gmatch(v, "(%w+)=(%w+)") do
 				if l == "1" then
-					vim.cmd("colorscheme " .. night_theme)
-				else
 					vim.cmd("colorscheme " .. day_theme)
+				else
+					vim.cmd("colorscheme " .. night_theme)
 				end
 			end
 		end
@@ -53,8 +53,17 @@ return {
 	}, ]]
 	{
 		"EdenEast/nightfox.nvim",
+		-- config = function()
+		-- 	themeswitcher("dayfox", "carbonfox")
+		-- end,
+	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		lazy = false,
 		config = function()
-			themeswitcher("dayfox", "carbonfox")
+			require("nightfox")
+			themeswitcher("dayfox", "rose-pine-main")
 		end,
 	},
 	-- { "Mofiqul/dracula.nvim" },
@@ -87,14 +96,6 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {},
-	}, ]]
-	--[[ {
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-			-- require("rose-pine").setup({})
-			themeswitcher("rose-pine-main", "rose-pine-dawn")
-		end,
 	}, ]]
 	--[[ "f-person/auto-dark-mode.nvim",
 	opts = {
