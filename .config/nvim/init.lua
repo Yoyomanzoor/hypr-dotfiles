@@ -263,6 +263,7 @@ require("lazy").setup({
 				{ "<leader>d", group = "[D]ocument" },
 				{ "<leader>f", group = "[F]ind or [Format]" },
 				{ "<leader>g", group = "[G]it" },
+				{ "<leader>j", group = "[J]ump" },
 				{ "<leader>r", group = "[R]ename" },
 				{ "<leader>s", group = "[S]earch" },
 				{ "<leader>w", group = "[W]eb" },
@@ -1218,6 +1219,7 @@ require("lazy").setup({
 	require("custom.plugins.colorizer"),
 	require("custom.plugins.themes"),
 	require("custom.plugins.w3m"),
+	require("custom.plugins.surround"),
 	-- require("mappings"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
