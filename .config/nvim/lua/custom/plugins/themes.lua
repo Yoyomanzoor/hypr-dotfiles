@@ -63,7 +63,11 @@ return {
 		lazy = false,
 		config = function()
 			require("nightfox")
-			themeswitcher("dayfox", "rose-pine-main")
+			if os.getenv("HYPRLAND_INSTANCE_SIGNATURE") == nil then -- check if Hyprland is running
+				vim.cmd("colorscheme elflord")
+			else
+				themeswitcher("dayfox", "rose-pine-main")
+			end
 		end,
 	},
 	-- { "Mofiqul/dracula.nvim" },
